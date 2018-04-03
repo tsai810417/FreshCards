@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'static_pages/root'
-
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show]
     resources :decks, only: [:index, :show, :create, :edit] do
@@ -12,4 +10,6 @@ Rails.application.routes.draw do
     resources :questions, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
   end
+
+  root "static_pages#root"
 end

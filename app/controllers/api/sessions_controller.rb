@@ -17,9 +17,9 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render "api/session/create"
+      render {}
     else
-      render json: ["No current user"], status: 404
+      render json: ["No current user to logout"], status: 404
     end
   end
 end
