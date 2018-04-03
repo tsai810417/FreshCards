@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/root'
+
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show]
     resources :decks, only: [:index, :show, :create, :edit] do

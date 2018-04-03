@@ -39,6 +39,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'jquery-rails'
 end
 
 group :development do
