@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 
 //for test purpose
-import { signup, login } from './actions/session_actions';
+import { signup, login, logout } from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.signup = signup;
   window.store = store;
+  window.logout = logout;
   //end for test purpose
   ReactDOM.render(<h1>Welcome to FreshCard</h1>, root);
 });
