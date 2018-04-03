@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
+import Root from './components/root';
 
 //for test purpose
 import { signup, login, logout } from './actions/session_actions';
@@ -16,5 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.logout = logout;
   //end for test purpose
-  ReactDOM.render(<h1>Welcome to FreshCard</h1>, root);
+  ReactDOM.render(<Root store={ store } />, root);
 });
