@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   renderErrors() {
 
     return (
-      <ul>
+      <ul className='error-list'>
         { this.props.errors.map((error, idx) => (
           <li key={`error${idx}`}>{ error }</li>
         ))}
@@ -41,8 +41,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <form onSubmit={ this.handleSubmit } className="session-form-box">
-          { this.props.formType }
-          { this.renderErrors() }
+          <h3 className='form-title'>{ this.props.formType }</h3>
           <div className="session-form">
             { this.props.formType === 'Sign Up' ? (
               <label className='session-form-label'>Username
@@ -50,8 +49,7 @@ class SessionForm extends React.Component {
                   value={ this.state.username }
                   onChange={ this.update('username') }
                   className='session-form-input' />
-              <br />
-            </label>
+              </label>
             ) : '' }
 
             <label className='session-form-label'>Email
@@ -59,24 +57,27 @@ class SessionForm extends React.Component {
                 value={ this.state.email }
                 onChange={ this.update('email') }
                 className='session-form-input' />
+              <br />
             </label>
-            <br />
             <label className='session-form-label'>Password
               <input type='password'
                 value={ this.state.password }
                 onChange={ this.update('password') }
                 className='session-form-input' />
+              <br />
             </label>
-            <br />
+            { this.renderErrors() }
+            
             <input className='session-form-submit'
               type='submit'
               value={ this.props.formType } />
+            { this.props.formType === 'Log In' ? (
+              <button className='session-form-submit' onClick={ this.handdleGuestLogin }>Guest Login</button>
+            ) : '' }
           </div>
         </form>
-        { this.props.formType === 'Log In' ? (
-          <button className='session-form-submit' onClick={ this.handdleGuestLogin }>Guest Login</button>
-        ) : '' }
         { this.props.navlink }
+
       </div>
     );
   }

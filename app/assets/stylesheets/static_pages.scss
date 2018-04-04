@@ -1,7 +1,12 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
+
 header {
+  width: 100%;
+  font-family: $jua;
   display: block;
   display: flex;
   justify-content: space-between;
@@ -11,16 +16,11 @@ header {
   display: inline-block;
   position: relative;
   margin: auto;
-  font-family: 'Yatra One', cursive;
   font-size: 50px;
-  font-weight: bolder;
+  font-weight: bold;
   color: #14ECCE;
 }
 
 .logo-img {
   width: 150px;
-}
-
-.login-signup {
-  display: inline-block;
 }

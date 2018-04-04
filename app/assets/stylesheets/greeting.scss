@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
 
-.session-link {
+.login-signup, .header-group {
+  display: inline-block;
+}
+.session-link{
   display: inline-block;
   position: relative;
-  width: 70px;
+  width: auto;
   height: 25px;
   background-color: #7CA9A4;
-  font-family: 'Yatra One', cursive;
   font-size: 20px;
-  font-weight: bold;
   padding: 3px;
-  margin: 5px;
+  margin: 15px;
   text-decoration: none;
   border: 2px;
   border-color: #CCD9D7;
@@ -17,4 +20,38 @@
   border-style: outset;
   text-align: center;
   color: #FFFFFF;
+}
+
+.header-group {
+  display: flex;
+  flex-direction: row;
+  .header-name {
+    font-size: 30px;
+    margin: 15px;
+    text-shadow: 2px 2px #000000;
+    color: #FFFFFF;
+  }
+
+  .header-button {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 35px;
+    background-color: #7CA9A4;
+    font-size: 20px;
+    padding: 3px;
+    margin: 15px;
+    text-decoration: none;
+    border: 2px;
+    border-color: #CCD9D7;
+    border-radius: 5px;
+    border-style: outset;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: $jua;
+  }
+
+  .header-button:hover {
+    cursor: pointer;
+  }
 }

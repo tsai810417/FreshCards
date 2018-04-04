@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu:700');
+$gaegu: 'Gaegu', cursive;
+
+.session-form-container {
+  margin: 5px;
+  font-family: $gaegu;
+  display: block;
+  width: 450px;
+  height: auto;
+  background-color: yellow;
+  border: 5px outset #B6C3C2;
+  border-radius: 5px;
+  font-size: 18px;
+
+  .session-form-box {
+    padding-left: 30px;
+    padding-right: 30px;
+
+
+    .form-title {
+      padding-bottom: 20px;
+      display: block;
+      font-size: 50px;
+    }
+
+    .session-form-label {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+      padding-bottom: 10px;
+
+      .session-form-input {
+        margin-left: auto;
+      }
+    }
+
+
+  }
+
+  .session-form-submit {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: #7CA9A4;
+    font-size: 20px;
+    padding: 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    border: 2px outset #CCD9D7;
+    border-radius: 5px;
+    text-align: center;
+    font-family: $gaegu;
+    color: #FFFFFF;
+  }
+
+  .session-p {
+    position:relative;
+    margin: 20px;
+    padding-bottom: 10px;
+
+  }
+
+  .session-form-input {
+    padding: 5px 10px;
+    font-family: $gaegu;
+    font-size: 20px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #8DB3B0;
+    color: #FFFFFF;
+  }
+
+  .session-form-submit:hover {
+    cursor: pointer;
+  }
+}
