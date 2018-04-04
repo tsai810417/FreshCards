@@ -15,6 +15,7 @@ import LoginFormContainer from './session_form/login_form_container';
 const App = () => (
   <div>
     <header>
+      <a className='logo-a-tag' href='#/'><img className='logo-img' src='https://github.com/tsai810417/resources/blob/master/Logo.png?raw=true'></img></a>
       <h1>Welcome to FreshCards</h1>
       <GreetingContainer />
     </header>
