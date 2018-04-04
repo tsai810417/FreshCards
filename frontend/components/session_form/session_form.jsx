@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {email: "", password: "", username: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handdleGuestLogin = this.handdleGuestLogin.bind(this);
   }
 
   update(field) {
@@ -14,6 +15,12 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.submitForm(this.state).then(() => this.props.history.push('/'));
+  }
+
+  handdleGuestLogin(e) {
+    e.preventDefault();
+    this.setState = {email: "guest_login@", password: "123456"};
     this.props.submitForm(this.state).then(() => this.props.history.push('/'));
   }
 
@@ -64,6 +71,9 @@ class SessionForm extends React.Component {
               value={ this.props.formType } />
           </div>
         </form>
+        { this.props.formType === 'Log In' ? (
+          <button className='session-form-submit' onClick={ this.handdleGuestLogin }>Guest Login</button>
+        ) : '' }
         { this.props.navlink }
       </div>
     );
