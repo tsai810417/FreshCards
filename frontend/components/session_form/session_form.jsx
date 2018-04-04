@@ -14,14 +14,16 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     this.props.submitForm(this.state).then(() => this.props.history.push('/'));
   }
 
   handdleGuestLogin(e) {
     e.preventDefault();
-    this.setState = {email: "guest_login@", password: "123456"};
-    this.props.submitForm(this.state).then(() => this.props.history.push('/'));
+    this.setState({email: "guest_login@", password: "123456"},
+    () => this.handleSubmit());
   }
 
   renderErrors() {
