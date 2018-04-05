@@ -1,6 +1,6 @@
-json.user do
-  json.extract! @user, :id, :username
-end
+
+json.extract! @user, :id, :username
+
 
 json.decks do
   @user.decks.each do | deck |
