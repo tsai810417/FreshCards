@@ -18,8 +18,10 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :decks
-  has_many :progresses
+  has_many :decks,
+  foreign_key: :author_id,
+  class_name: :Deck
+
 
   def password=(password)
     @password = password
