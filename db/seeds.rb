@@ -6,3 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 guest = User.create([{ username: 'Guest', password: '123456', email: 'guest_login@' }])
+
+names = 'ABCDEFGHIJ'.split('')
+10.times do |i|
+  i = Deck.create([{ deck_name: names[i], author_id: i, subject_id: i / 2 }])
+end

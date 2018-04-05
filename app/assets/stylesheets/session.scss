@@ -7,7 +7,6 @@ $gaegu: 'Gaegu', cursive;
   display: block;
   width: 450px;
   height: auto;
-  background-color: yellow;
   border: 5px outset #B6C3C2;
   border-radius: 5px;
   font-size: 18px;
@@ -38,7 +37,7 @@ $gaegu: 'Gaegu', cursive;
   }
 
   .session-form-submit {
-    display: inline-block;
+    left: 300px;
     position: relative;
     width: auto;
     height: auto;
@@ -46,6 +45,7 @@ $gaegu: 'Gaegu', cursive;
     font-size: 20px;
     padding: 5px;
     margin-right: 15px;
+    margin-top: 15px;
     text-decoration: none;
     border: 2px outset #CCD9D7;
     border-radius: 5px;
@@ -56,7 +56,7 @@ $gaegu: 'Gaegu', cursive;
 
   .session-p {
     position:relative;
-    margin: 20px;
+    margin: 30px;
     padding-bottom: 10px;
 
   }
@@ -67,7 +67,7 @@ $gaegu: 'Gaegu', cursive;
     font-size: 20px;
     width: 50%;
     border-radius: 5px;
-    background-color: #8DB3B0;
+    background-color: #E1E0DD;
     color: #FFFFFF;
   }
 

@@ -28,7 +28,7 @@ export const updateDeck = deck => (
   })
 );
 
-export const destroyDeck = deck => (
+export const deleteDeck = deck => (
   $.ajax({
     url: `/api/decks/${deck.id}`,
     method: 'DELETE'
