@@ -20,7 +20,6 @@ export const removeDeck = deck => ({
 });
 
 export const receiveErrors = errors => {
-  debugger
   return ({
   type: RECEIVE_DECK_ERRORS,
   errors
@@ -42,7 +41,6 @@ export const createDeck = deck => dispatch => (
   APIUtil.createDeck(deck).then(deck => (
     dispatch(receiveDeck(deck))
   ), err => {
-    debugger
     return dispatch(receiveErrors(err.responseJSON))
   })
 );

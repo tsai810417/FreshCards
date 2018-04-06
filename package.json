@@ -25,7 +25,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
     "webpack": "webpack --watch"
   },
   "repository": {
@@ -38,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/tsai810417/FreshCards/issues"
   },
-  "homepage": "https://github.com/tsai810417/FreshCards#readme"
+  "homepage": "https://github.com/tsai810417/FreshCards#readme",
+  "engines": {
+    "node": "9.3.0",
+    "npm": "5.6.0"
+  }
 }
