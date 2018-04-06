@@ -5,9 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-guest = User.create([{ username: 'Guest', password: '123456', email: 'guest_login@' }])
+require 'faker'
+User.create([{ username: 'Guest', password: '123456', email: 'guest_login@' }])
 
-names = 'ABCDEFGHIJ'.split('')
-10.times do |i|
-  i = Deck.create([{ deck_name: names[i], author_id: i, subject_id: i / 2 }])
+sub_id = Array(1..5)
+user_id = Array(1..10)
+
+10.times do
+  User.create([{ username: Faker::Name.name, password: '123456', email: Faker::Internet.email }])
 end
+
+Subject.create([
+  {title: 'History'},
+  {title: 'Science'},
+  {title: 'Math'},
+  {title: 'Art'},
+  {title: 'Language'}
+  ])
+
+  10.times do
+    Deck.create!([{ deck_name: Faker::Book.title, author_id: user_id.sample, subject_id: sub_id.sample }])
+  end

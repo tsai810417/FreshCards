@@ -10,7 +10,9 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
-
+import DeckIndexContainer from './deck_index/deck_index_container';
+import CurrentUserDeckIndexContainer from './deck_index/currentuser_deck_index_container';
+import CreateDeckFormContainer from './deck_form/create_deck_form_container';
 
 const App = () => (
   <div>
@@ -20,8 +22,12 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route path="/login" component={LoginFormContainer} />
-      <Route path="/signup" component={SignupFormContainer} />
+      <Route path="/login" component={ LoginFormContainer } />
+      <Route path="/signup" component={ SignupFormContainer } />
+      <Route exact path="/decks" component={ DeckIndexContainer } />
+      <Route path="/profile" component={ CurrentUserDeckIndexContainer } />
+      <Route path="/decks/new" component={ CreateDeckFormContainer } />
+
     </Switch>
   </div>
 );

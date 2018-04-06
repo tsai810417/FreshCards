@@ -42,6 +42,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'jquery-rails'
+  gem 'faker'
 end
 
 group :development do

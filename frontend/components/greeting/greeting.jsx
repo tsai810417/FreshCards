@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -8,15 +10,23 @@ const sessionLinks = () => (
   </nav>
 );
 
-const personalGreeting = (currentUser, logout) => (
+const personalGreeting = (currentUser, logout, history) => {
+  let handleButton = (e) => {
+    e.preventDefault();
+
+    logout().then(history.push('/'))
+  }
+  return (
   <hgroup className="header-group">
     <h2 className="header-name">Hi, { currentUser.username }</h2>
-    <button className="header-button" onClick={ logout }>Log Out</button>
+    <button className="header-button" onClick={ handleButton }>Log Out</button>
   </hgroup>
-);
+)};
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+const Greeting = ( props ) => {
+  return (
+    props.currentUser ? personalGreeting(props.currentUser, props.logout, props.history) : sessionLinks()
+  )
+};
 
-export default Greeting;
+export default withRouter(Greeting);

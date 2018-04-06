@@ -2,7 +2,11 @@ class Api::DecksController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
   def index
-    @decks = Deck.all
+    if params[:id].nil?
+      @decks = Deck.all
+    else
+      @decks = current_user.decks
+    end
   end
 # was able to create but error out if not create successfully
   def create
@@ -11,7 +15,7 @@ class Api::DecksController < ApplicationController
     if @deck.save
       render json: @deck
     else
-      render json: @deck.errors.full_message, status: 422
+      render json: @deck.errors.full_messages, status: 422
     end
   end
 
@@ -24,7 +28,7 @@ class Api::DecksController < ApplicationController
     if @deck.update(deck_params)
       render json: @deck
     else
-      render json: @deck.errors.full_message, status: 422
+      render json: @deck.errors.full_messages, status: 422
     end
   end
 

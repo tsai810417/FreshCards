@@ -4,7 +4,8 @@ import DeckIndex from './deck_index';
 import { fetchDecks } from '../../actions/deck_actions';
 
 const mapStateToProps = state => ({
-  decks: Object.keys(state.decks).map(id => state.decks[id])
+  decks: Object.keys(state.decks).map(id => state.decks[id]),
+  indexType: 'all'
 });
 
 const mapDispatchToProps = dispatch => ({

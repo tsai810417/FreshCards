@@ -1,3 +1,4 @@
-json.deck do
-  json.extract! @deck, :id, :deck_name, :author_id, :subject_id
-end
+json.key_format! camelize: :lower
+
+json.extract! deck, :id, :deck_name
+json.subject deck.subject.title

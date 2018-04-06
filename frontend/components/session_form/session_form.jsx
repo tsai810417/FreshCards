@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
     if (e) {
       e.preventDefault();
     }
-    this.props.submitForm(this.state).then(() => this.props.history.push('/'));
+    this.props.submitForm(this.state).then(() => this.props.history.push('/profile'));
   }
 
   handdleGuestLogin(e) {
@@ -27,7 +27,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-
     return (
       <ul className='error-list'>
         { this.props.errors.map((error, idx) => (
@@ -67,7 +66,7 @@ class SessionForm extends React.Component {
               <br />
             </label>
             { this.renderErrors() }
-            
+
             <input className='session-form-submit'
               type='submit'
               value={ this.props.formType } />

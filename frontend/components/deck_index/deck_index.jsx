@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 
 class DeckIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchDecks();
+    if (this.props.indexType === 'all') {
+      this.props.fetchDecks();
+    } else {
+      this.props.fetchDecks(1)
+    }
+
   }
 
   render() {
@@ -21,7 +26,7 @@ class DeckIndex extends React.Component {
         <ul>
           { deck }
         </ul>
-        <Link to={ '/api/decks/new' }>Create Your Deck</Link>
+        <Link to='/decks/new'>Create Your Deck</Link>
       </div>
     );
   }

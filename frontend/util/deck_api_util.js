@@ -5,6 +5,14 @@ export const fetchDecks = () => (
   })
 );
 
+export const fetchCurrentUserDecks = (id) => (
+  $.ajax({
+    url: '/api/decks',
+    method: 'GET',
+    data: {id: id}
+  })
+);
+
 export const fetchDeck = id => (
   $.ajax({
     url: `/api/decks/${id}`,
