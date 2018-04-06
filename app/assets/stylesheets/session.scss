@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Gaegu:700');
-$gaegu: 'Gaegu', cursive;
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
 
 .session-form-container {
-  margin: 5px;
-  font-family: $gaegu;
+  margin: auto;
+  margin-top: 20px;
+  font-family: $jua;
   display: block;
   width: 450px;
   height: auto;
@@ -11,9 +12,11 @@ $gaegu: 'Gaegu', cursive;
   border-radius: 5px;
   font-size: 18px;
 
+
   .session-form-box {
     padding-left: 30px;
     padding-right: 30px;
+    text-align: center;
 
 
     .form-title {
@@ -40,17 +43,22 @@ $gaegu: 'Gaegu', cursive;
     position: relative;
     width: auto;
     height: auto;
+    display: inline-block;
+
     background-color: #7CA9A4;
     font-size: 20px;
     padding: 5px;
-    margin-right: 15px;
-    margin-top: 15px;
+    margin: 15px;
     text-decoration: none;
     border: 2px outset #CCD9D7;
     border-radius: 5px;
     text-align: center;
-    font-family: $gaegu;
+    font-family: $jua;
     color: #FFFFFF;
+  }
+
+  .error-list {
+    color: red;
   }
 
   .session-p {
@@ -62,7 +70,7 @@ $gaegu: 'Gaegu', cursive;
 
   .session-form-input {
     padding: 5px 10px;
-    font-family: $gaegu;
+    font-family: $jua;
     font-size: 20px;
     width: 50%;
     border-radius: 5px;

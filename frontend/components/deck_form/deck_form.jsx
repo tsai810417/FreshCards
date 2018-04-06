@@ -32,7 +32,7 @@ class DeckForm extends React.Component {
   }
 
   render() {
-    
+
     return (
       <div className='deck-form-container'>
         <form
@@ -48,8 +48,8 @@ class DeckForm extends React.Component {
               <br />
             </label>
             <label className='deck-form-label'>Subject
-              <select value={this.state.subject_id}
-                onChange={this.update('subject_id')}
+              <select value={this.state.subjectId}
+                onChange={this.update('subjectId')}
                 className='deck-form-dropdown'>
                 <option defaultValue="">--Choose Subject--</option>
                 <option value='1'>History</option>

@@ -10,8 +10,10 @@ class Api::DecksController < ApplicationController
   end
 # was able to create but error out if not create successfully
   def create
-    @deck = Deck.new(deck_params)
+    @deck = Deck.new
     @deck.author_id = current_user.id
+    @deck.title = params[:deck][:title]
+    @deck.subject_id = params[:deck][:subjectId]
     if @deck.save
       render json: @deck
     else
@@ -25,7 +27,10 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find(params[:id])
-    if @deck.update(deck_params)
+    debugger
+    @deck.title = params[:deck][:title]
+    @deck.subject_id = params[:deck][:subjectId]
+    if @deck.save
       render json: @deck
     else
       render json: @deck.errors.full_messages, status: 422
@@ -39,7 +44,7 @@ class Api::DecksController < ApplicationController
   end
   private
 
-  def deck_params
-    params.require(:deck).permit(:title, :author_id, :subject_id)
-  end
+  # def deck_params
+  #   params.require(:deck).permit(:title, :author_id, :subject_id)
+  # end
 end
