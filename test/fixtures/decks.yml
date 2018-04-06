@@ -3,7 +3,7 @@
 # Table name: decks
 #
 #  id         :integer          not null, primary key
-#  deck_name  :string           not null
+#  title      :string           not null
 #  author_id  :integer          not null
 #  subject_id :integer          not null
 #  created_at :datetime         not null
@@ -13,11 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  deck_name: MyString
+  title: MyString
   author_id: 1
   subject_id: 1
 
 two:
-  deck_name: MyString
+  title: MyString
   author_id: 1
   subject_id: 1

@@ -21,8 +21,23 @@ Subject.create([
   {title: 'Math'},
   {title: 'Art'},
   {title: 'Language'}
-  ])
+])
 
-  10.times do
-    Deck.create!([{ deck_name: Faker::Book.title, author_id: user_id.sample, subject_id: sub_id.sample }])
-  end
+10.times do
+  Deck.create!([{ title: Faker::Educator.course, author_id: user_id.sample, subject_id: sub_id.sample }])
+end
+
+Question.create!([
+  { body: 'I am Q1-1', answer: 'I am A1-1', deck_id: 1 },
+  { body: 'I am Q1-2', answer: 'I am A1-2', deck_id: 1 },
+  { body: 'I am Q1-3', answer: 'I am A1-3', deck_id: 1 },
+  { body: 'I am Q1-4', answer: 'I am A1-4', deck_id: 1 },
+  { body: 'I am Q2-1', answer: 'I am A2-1', deck_id: 2 },
+  { body: 'I am Q2-2', answer: 'I am A2-2', deck_id: 2 },
+  { body: 'I am Q2-3', answer: 'I am A2-3', deck_id: 2 },
+  { body: 'I am Q2-4', answer: 'I am A2-4', deck_id: 2 },
+  { body: 'I am Q3-1', answer: 'I am A3-1', deck_id: 3 },
+  { body: 'I am Q3-2', answer: 'I am A3-2', deck_id: 3 },
+  { body: 'I am Q3-3', answer: 'I am A3-3', deck_id: 3 },
+  { body: 'I am Q3-4', answer: 'I am A3-4', deck_id: 3 }
+])

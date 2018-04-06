@@ -3,7 +3,7 @@
 # Table name: decks
 #
 #  id         :integer          not null, primary key
-#  deck_name  :string           not null
+#  title      :string           not null
 #  author_id  :integer          not null
 #  subject_id :integer          not null
 #  created_at :datetime         not null

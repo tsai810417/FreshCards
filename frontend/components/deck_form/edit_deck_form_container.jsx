@@ -7,7 +7,7 @@ import DeckForm from './deck_form';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-  deck: state.decks[ownProps.match.params.deckId] || {deck_name: '', subject_id: ''},
+  deck: state.decks[ownProps.match.params.deckId] || {title: '', subject_id: ''},
   errors: state.errors.deck,
   formType: 'Edit Deck'
 })};

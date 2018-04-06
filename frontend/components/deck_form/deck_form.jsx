@@ -32,6 +32,7 @@ class DeckForm extends React.Component {
   }
 
   render() {
+    
     return (
       <div className='deck-form-container'>
         <form
@@ -41,8 +42,8 @@ class DeckForm extends React.Component {
           <div className='deck-form'>
             <label className='deck-form-label'>Deck Name
               <input type='text'
-                value={ this.state.deck_name }
-                onChange={ this.update('deck_name') }
+                value={ this.state.title }
+                onChange={ this.update('title') }
                 className='deck-form-textbox' />
               <br />
             </label>
@@ -50,7 +51,7 @@ class DeckForm extends React.Component {
               <select value={this.state.subject_id}
                 onChange={this.update('subject_id')}
                 className='deck-form-dropdown'>
-                <option value="" selected>--Choose Subject--</option>
+                <option defaultValue="">--Choose Subject--</option>
                 <option value='1'>History</option>
                 <option value='2'>Science</option>
                 <option value='3'>Math</option>
