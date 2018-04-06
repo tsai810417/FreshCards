@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 const sessionLinks = () => (
   <nav className="login-signup">
     <Link to="/login" className='session-link'>Log In</Link>
-    <Link to="signup" className='session-link'>Sign Up</Link>
+    <Link to="/signup" className='session-link'>Sign Up</Link>
   </nav>
 );
 
@@ -18,7 +18,7 @@ const personalGreeting = (currentUser, logout, history) => {
   }
   return (
   <hgroup className="header-group">
-    <h2 className="header-name">Hi, { currentUser.username }</h2>
+    <a className='header-name' href='/#/profile'>Hi, { currentUser.username }</a>
     <button className="header-button" onClick={ handleButton }>Log Out</button>
   </hgroup>
 )};

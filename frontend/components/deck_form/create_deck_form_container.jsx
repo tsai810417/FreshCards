@@ -6,6 +6,7 @@ import { createDeck } from '../../actions/deck_actions';
 import DeckForm from './deck_form';
 
 const mapStateToProps = ({ errors }) => ({
+  deck: {deck_name: '', subject_id: ''},
   errors: errors.deck,
   formType: 'Create Deck'
 });

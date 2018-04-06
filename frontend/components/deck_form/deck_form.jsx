@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom';
 class DeckForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {deckName: '', subject_id: ''};
-    this.deckName = this.state.deckName
+    debugger
+    this.state = this.props.deck;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -37,24 +37,21 @@ class DeckForm extends React.Component {
         <form
           onSubmit={ this.handleSubmit }
           className='deck-form-box'>
-          { this.props.formType !== 'Create Deck' ? (
-            <h3>{ this.state.deckName }</h3>
-          ) : (
-            <h3>Create New Deck</h3>
-          ) }
+          <h3>{ this.props.formType }</h3>
           <div className='deck-form'>
             <label className='deck-form-label'>Deck Name
               <input type='text'
-                value={ this.state.deckName }
-                onChange={ this.update('deckName') }
+                value={ this.state.deck_name }
+                onChange={ this.update('deck_name') }
                 className='deck-form-textbox' />
               <br />
             </label>
             <label className='deck-form-label'>Subject
-              <select value={this.state.subjectID}
-                onChange={this.update('subjectId')}
+              <select value={this.state.subject_id}
+                onChange={this.update('subject_id')}
                 className='deck-form-dropdown'>
-                <option value='1'>Histore</option>
+                <option value="" selected>--Choose Subject--</option>
+                <option value='1'>History</option>
                 <option value='2'>Science</option>
                 <option value='3'>Math</option>
                 <option value='4'>Art</option>

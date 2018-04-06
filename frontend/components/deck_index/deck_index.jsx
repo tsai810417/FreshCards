@@ -15,8 +15,11 @@ class DeckIndex extends React.Component {
     const deck = this.props.decks.map(deck => {
       return (
         <li key={deck.id}>
-          <Link to={`/api/decks/${deck.id}`}>{deck.deckName}</Link>
+          <Link to={`/decks/${deck.id}`}>{deck.deckName}</Link>
           <p>{ deck.subject }</p>
+          { this.props.indexType === 'currentuser' ? (
+            <Link to={ `/decks/${deck.id}/edit` }>Edit Deck</Link>
+          ) : '' }
         </li>
       );
     });
