@@ -9,9 +9,9 @@ export const receiveDecks = decks => ({
   decks
 });
 
-export const receiveDeck = deck => ({
+export const receiveDeck = payload => ({
   type: RECEIVE_DECK,
-  deck
+  payload
 });
 
 export const removeDeck = deck => ({

@@ -12,6 +12,7 @@ class DeckIndex extends React.Component {
   }
 
   render() {
+    debugger
     const deck = this.props.decks.map(deck => {
       return (
         <li key={deck.id}>

@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 
 class DeckShow extends React.Component {
   constructor(props) {
-
     super(props)
     this.deck = this.props.deck
   }
-  componentDidMount() {
-    debugger
+  componentWillMount() {
     this.props.fetchDeck(this.props.match.params.deckId);
   }
 
@@ -37,7 +35,7 @@ class DeckShow extends React.Component {
           </tr>
           { this.props.deck.questions ? questions : ''}
         </table>
-        <Link to={`decks/${id}/questions/new`}>Add Questions</Link>
+        
       </div>
     );
   }

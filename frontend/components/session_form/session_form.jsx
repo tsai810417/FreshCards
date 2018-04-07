@@ -9,6 +9,10 @@ class SessionForm extends React.Component {
     this.handdleGuestLogin = this.handdleGuestLogin.bind(this);
   }
 
+  componentDidMount () {
+    this.props.clearSessionErrors();
+  }
+
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }

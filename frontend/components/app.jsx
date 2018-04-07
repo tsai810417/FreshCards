@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../../frontend/util/route_util'
 import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
@@ -24,12 +25,12 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
-      <Route path="/login" component={ LoginFormContainer } />
-      <Route path="/signup" component={ SignupFormContainer } />
+      <AuthRoute path="/login" component={ LoginFormContainer } />
+      <AuthRoute path="/signup" component={ SignupFormContainer } />
       <Route exact path="/decks" component={ DeckIndexContainer } />
-      <Route path="/profile" component={ CurrentUserDeckIndexContainer } />
-      <Route path="/decks/new" component={ CreateDeckFormContainer } />
-      <Route path="/decks/:deckId/edit" component={ EditDeckFormContainer } />
+      <ProtectedRoute path="/profile" component={ CurrentUserDeckIndexContainer } />
+      <ProtectedRoute path="/decks/new" component={ CreateDeckFormContainer } />
+      <ProtectedRoute path="/decks/:deckId/edit" component={ EditDeckFormContainer } />
       <Route extact path="/decks/:deckId" component={ DeckShowContainer } />
 
     </Switch>

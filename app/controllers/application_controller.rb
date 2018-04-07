@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 
   private
 
@@ -31,5 +31,5 @@ class ApplicationController < ActionController::Base
       render json: { base: ['log in required'] }, status: 401
     end
   end
-  
+
 end

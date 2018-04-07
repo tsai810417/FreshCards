@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,6 +18,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
+  font-family: $jua;
 }
 /* remember to define focus styles! */
 :focus {

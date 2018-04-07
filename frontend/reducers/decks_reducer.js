@@ -10,9 +10,9 @@ const decksReducer = (oldState = {}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_DECK:
-      newState[action.deck.id] = action.deck;
+      let deck = action.payload.deck;
+      newState[deck.id] = deck
       return merge({}, oldState, newState);
-      break;
     case RECEIVE_DECKS:
       return action.decks;
       break;

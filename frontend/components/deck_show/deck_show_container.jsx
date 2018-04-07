@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import DeckShow from './deck_show';
 import { fetchDeck } from '../../actions/deck_actions';
+import { selectDeckQuestions } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-return ({
-  deck: state.decks[ownProps.match.params.deckId]
-});
+  const deck = state.decks[ownProps.match.params.deckId];
+  return ({
+    deck,
+    questions: selectDeckQuestions(state, deck)
+  });
 }
 
 const mapDispatchToProps = dispatch => ({
