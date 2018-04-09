@@ -1,52 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Jua');
 $jua: 'Jua', sans-serif;
 
-.deck-form-container {
+.question-form-container {
   margin: auto;
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: center;
   margin-top: 15px;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   border-radius: 8px;
-  .deck-form-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    .deck-form-title {
-      font-size: 40px;
-      margin: auto;
-      margin-top: 15px;
-    }
+  .question-form-box {
+    font-size: 40px;
+    width: 80%;
 
-    .deck-form {
+    .question-form-title {
+      text-align: center;
+      margin: 15px;
+    }
+    .question-form {
       display: flex;
       justify-content: center;
       flex-direction: column;
       margin: 15px;
-      .deck-form-label {
-        font-size: 20px;
-        .deck-form-textbox {
-          padding: 5px 10px;
-          font-family: $jua;
-          font-size: 17px;
-          width: 50%;
-          border-radius: 5px;
-          background-color: #E1E0DD;
-          margin: 15px;
-          word-wrap: break-word;
-        }
-
-        .deck-form-dropdown {
-          background-color: #E1E0DD;
-          margin: 15px;
-          option {
-            font-family: $jua;
-            margin: 15px;
+      .question-form-label {
+        display: flex;
+        flex-direction: column;
+        .question-form-textbox {
+          &:focus {
+            border: solid #000000;
           }
+          font-family: $jua;
+          padding: 15px 20px;
+          text-align: left;
+          border: 1px solid #CFD2D4;
+          border-radius: 5px;
+          font-size: 20px;
+          height:100px;
+          word-break: break-word;
         }
       }
-      .deck-form-submit {
+
+      .question-form-submit {
         font-family: $jua;
         margin: 15px;
         position: relative;
@@ -55,7 +49,7 @@ $jua: 'Jua', sans-serif;
         display: inline-block;
 
         background-color: #88C2EA;
-        font-size: 20px;
+        font-size: 35px;
         padding: 5px;
         text-decoration: none;
         border: 2px solid #CCD9D7;

@@ -41,7 +41,6 @@ class DeckIndex extends React.Component {
         </tr>
       );
     });
-    debugger
     return (
       <div className='deck-index-container'>
         <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>

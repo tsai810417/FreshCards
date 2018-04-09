@@ -21,9 +21,7 @@ class DeckForm extends React.Component {
     if (e) {
       e.preventDefault();
     }
-    debugger
-    this.props.submitForm(this.state).then(() => this.props.history.push(`/decks/${this.props.match.params.deckId}`));
-    //have to direct to show page later, for the new deck? how to get //the deckId???
+    this.props.submitForm(this.state).then(deck => this.props.history.push(`/decks/${Math.max(...Object.keys(store.getState().decks))}`));
   }
 
   handleDelete() {

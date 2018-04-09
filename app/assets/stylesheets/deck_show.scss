@@ -1,0 +1,95 @@
+.deck-show-container {
+  width: 70%;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .deck-show-title {
+  text-align: center;
+  font-size: 35px;
+  margin: 15px;
+  }
+  .deck-show-subject {
+  text-align: center;
+  font-size: 30px;
+  margin: 15px;
+  }
+  .deck-show-table {
+    width: 820px;
+    margin-left: 180px;
+    tr {
+      align-items: center;
+      margin: 15px;
+      .deck-show-header {
+        font-size: 28px;
+        height: 50px;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .deck-show-td {
+        border: 1px solid #CFD2D4;
+        vertical-align: middle;
+        font-size: 20px;
+        width: 250px;
+        height: 100px;
+        text-align: center;
+      }
+      .deck-show-empty-td {
+        width:10%;
+        vertical-align: middle;
+        .deck-delete-question-button {
+          margin: 20px;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .deck-to-index-button {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    height: auto;
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #88C2EA;
+    font-size: 35px;
+    padding: 5px;
+    text-decoration: none;
+    border: 2px solid #CCD9D7;
+    border-radius: 5px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #4FABEA;
+      border-style: outset;
+    }
+  }
+  .deck-show-buttons {
+      display: flex;
+      justify-content: space-between;
+    .deck-delete-deck-button {
+
+    }
+    .deck-add-question-link, .deck-delete-deck-button, .deck-edit-link {
+      color: #000000;
+      width: auto;
+      font-size: 20px;
+      margin-bottom: 15px;
+      height: auto;
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px;
+      border: 3px solid #000000;
+      border-radius: 30px;
+      &:hover {
+        background-color: #E4E7E9;
+      }
+    }
+  }
+}

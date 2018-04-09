@@ -23,10 +23,14 @@ class DeckShow extends React.Component {
         debugger
         return (
           <tr>
-            <td>{ this.props.questions[qId].body }</td>
-            <td>{ this.props.questions[qId].answer }</td>
-            { this.props.currentUser.id === this.props.deck.authorId ? (
-              <button onClick={() => this.props.deleteQuestion(qId).then(() => this.props.histroy.push('/decks'))}>Delete</button>
+            <td className='deck-show-td'>{ this.props.questions[qId].body }</td>
+            <td className='deck-show-td'>{ this.props.questions[qId].answer }</td>
+            { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
+              <td className='deck-show-empty-td'>
+                <button
+                  className='deck-delete-question-button'
+                  onClick={() => this.props.deleteQuestion(qId).then(() => this.props.histroy.push('/decks'))}>Delete</button>
+              </td>
             ) : ''}
           </tr>
           // qId will not be avaliable when the button is clicked!
@@ -35,24 +39,32 @@ class DeckShow extends React.Component {
       })
     }
     return (
-      <div>
-        <h1>{ `${this.props.deck.title} Cards Preview` }</h1>
-        <h3>Subject: { this.props.deck.subject }</h3>
-        <table>
+      <div className='deck-show-container'>
+        <div className='deck-show-buttons'>
+        { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
+          <Link to={ `/decks/${this.props.match.params.deckId}/questions/new` }
+            className='deck-add-question-link'>Add Card</Link>
+        ) : '' }
+        { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
+          <Link to={ `/decks/${this.props.match.params.deckId}/edit` }
+            className='deck-edit-link'>Edit Deck Info</Link>
+        ) : '' }
+        { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
+          <button className='deck-delete-deck-button' onClick={ () => this.props.deleteDeck(this.props.match.params.deckId).then(()=> this.props.history.push('/profile')) }>Delete Deck</button>
+        ) : '' }
+        </div>
+        <h1 className='deck-show-title'>{ `${this.props.deck.title} Cards Preview` }</h1>
+        <h3 className='deck-show-subject'>Subject: { this.props.deck.subject }</h3>
+        <table className='deck-show-table'>
           <tr>
-            <th>Question</th>
-            <th>Answer</th>
+            <th className='deck-show-header'>Questions</th>
+            <th className='deck-show-header'>Answers</th>
           </tr>
           { questions }
         </table>
-        { this.props.currentUser.id === this.props.deck.authorId ? (
-          <Link to={ `/decks/${this.props.deck.id}/questions/new` }
-            className='deck-add-question-link'>Add Card</Link>
-        ) : '' }
 
-        { this.props.currentUser.id === this.props.deck.authorId ? (
-          <button onClick={ () => this.props.deleteDeck(this.props.deck.id).then(()=> this.props.history.push('/profile')) }>Delete Deck</button>
-        ) : '' }
+
+        <button className='deck-to-index-button' onClick={ () => this.props.history.push('/decks') }>Back to Index</button>
       </div>
     );
   }

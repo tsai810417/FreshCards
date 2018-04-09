@@ -34,14 +34,14 @@ class QuestionForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='question-form-container'>
         <form
           onSubmit={ this.handleSubmit }
           className='question-form-box'>
           <h3 className='question-form-title'>{ this.props.formType }</h3>
           <div className='question-form'>
             <label className='question-form-label'>Question
-              <input type='text'
+              <textarea type='text'
                 value={ this.state.body }
                 onChange={ this.update('body') }
                 className='question-form-textbox' />
@@ -49,7 +49,7 @@ class QuestionForm extends React.Component {
             </label>
 
             <label className='question-form-label'>Answer
-              <input type='text'
+              <textarea type='text'
                 value={ this.state.answer }
                 onChange={ this.update('answer') }
                 className='question-form-textbox' />
@@ -60,7 +60,7 @@ class QuestionForm extends React.Component {
 
             <input className='question-form-submit'
               type='submit'
-              value={ this.props.formType } />
+              value='Submit' />
           </div>
         </form>
       </div>

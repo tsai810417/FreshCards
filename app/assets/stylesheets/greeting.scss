@@ -53,6 +53,10 @@ $jua: 'Jua', sans-serif;
     text-align: center;
     color: #FFFFFF;
     font-family: $jua;
+    &:hover {
+      color: #BFE1EE;
+      background-color: #818585; 
+    }
   }
 
   .header-button:hover {
