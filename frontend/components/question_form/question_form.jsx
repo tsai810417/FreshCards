@@ -19,8 +19,7 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitForm(this.state)
-    // want to refresh the deck show page with the question //added
+    this.props.submitForm(this.state).then(() => this.props.history.push(`/decks/${this.props.match.params.deckId}`))
   }
 
   renderErrors() {

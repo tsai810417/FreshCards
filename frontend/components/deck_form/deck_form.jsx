@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import CreateQuestionContainer from '../question_form/create_question_form_container';
+
 
 class DeckForm extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class DeckForm extends React.Component {
     }
     debugger
     this.props.submitForm(this.state).then(() => this.props.history.push(`/decks/${this.props.match.params.deckId}`));
-    //have to change to show page later, for the new deck how to get //the deckId???
+    //have to direct to show page later, for the new deck? how to get //the deckId???
   }
 
   handleDelete() {
@@ -95,9 +95,6 @@ class DeckForm extends React.Component {
             <input className='deck-form-submit'
               type='submit'
               value={ this.props.formType } />
-            { this.props.formType === 'Edit Deck' ? (
-              <CreateQuestionContainer />
-            ) : '' }
           </div>
         </form>
       </div>

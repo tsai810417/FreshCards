@@ -1,18 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CreateQuestionContainer from '../question_form/create_question_form_container';
+
 
 class DeckShow extends React.Component {
   constructor(props) {
     super(props)
-    this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
     this.props.fetchDeck(this.props.match.params.deckId);
-  }
-
-  handleDelete() {
-    this.props.deleteDeck(this.props.match.params.deckId).then(() => this.props.history.push('/profile'))
   }
 
   render() {
@@ -32,8 +27,6 @@ class DeckShow extends React.Component {
         );
       })
     }
-
-
     return (
       <div>
         <h1>{ `${this.props.deck.title} Cards Preview` }</h1>
@@ -45,10 +38,10 @@ class DeckShow extends React.Component {
           </tr>
           { questions }
         </table>
-        <CreateQuestionContainer />
-        { this.props.currentUser ? (
-          <button onClick={ this.handleDelete }>Delete Deck</button>
-        ) : ''}
+        { this.props.currentUser.id === this.props.deck.authorId ? (
+          <Link to={ `/decks/${this.props.deck.id}/questions/new` }
+            className='deck-add-question-link'>Add Card</Link>
+        ) : '' }
       </div>
     );
   }
