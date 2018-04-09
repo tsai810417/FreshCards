@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDecks: () => dispatch(fetchDecks())
+  fetchDecks: () => dispatch(fetchDecks()),
+  deleteDeck: id => dispatch(deleteDeck(id))
 });
 
 export default connect(

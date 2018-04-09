@@ -27,9 +27,8 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find(params[:id])
-    debugger
     @deck.title = params[:deck][:title]
-    @deck.subject_id = params[:deck][:subjectId]
+    @deck.subject_id = params[:deck][:subjectId] unless params[:deck][:subjectId].nil?
     if @deck.save
       render json: @deck
     else

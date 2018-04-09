@@ -18,7 +18,7 @@ const decksReducer = (oldState = {}, action) => {
       break;
     case REMOVE_DECK:
       newState = merge({}, oldState);
-      delete(newState[action.deck.id]);
+      delete(newState[action.deckId]);
       return newState;
       break;
     default:

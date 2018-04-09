@@ -1,4 +1,3 @@
-import values from 'lodash/values';
 
 export const selectDeckQuestions = (state, deck) => {
   return deck ? deck.question_ids.map( id => state.questions[id]) : [];

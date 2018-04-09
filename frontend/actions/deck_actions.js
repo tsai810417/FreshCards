@@ -3,6 +3,7 @@ export const RECEIVE_DECK = 'RECEIVE_DECK';
 export const RECEIVE_DECKS = 'RECEIVE_DECKS';
 export const REMOVE_DECK = 'REMOVE_DECK';
 export const RECEIVE_DECK_ERRORS = 'RECEIVE_DECK_ERRORS';
+export const CLEAR_FORM_ERRORS = 'CLEAR_FORM_ERRORS';
 
 export const receiveDecks = decks => ({
   type: RECEIVE_DECKS,
@@ -14,9 +15,9 @@ export const receiveDeck = payload => ({
   payload
 });
 
-export const removeDeck = deck => ({
+export const removeDeck = deckId => ({
   type: REMOVE_DECK,
-  deck
+  deckId
 });
 
 export const receiveErrors = errors => {
@@ -24,6 +25,10 @@ export const receiveErrors = errors => {
   type: RECEIVE_DECK_ERRORS,
   errors
 })};
+
+export const clearFormErrors = () => ({
+  type: CLEAR_FORM_ERRORS
+});
 
 export const fetchDecks = () => dispatch => (
   APIUtil.fetchDecks().then(decks => dispatch(receiveDecks(decks)))
@@ -39,7 +44,7 @@ export const fetchDeck = id => dispatch => (
 
 export const createDeck = deck => dispatch => (
   APIUtil.createDeck(deck).then(deck => (
-    dispatch(receiveDeck(deck))
+    dispatch(receiveDeck({deck: deck}))
   ), err => {
     return dispatch(receiveErrors(err.responseJSON))
   })
@@ -47,12 +52,12 @@ export const createDeck = deck => dispatch => (
 
 export const updateDeck = deck => dispatch => (
   APIUtil.updateDeck(deck).then(deck => (
-    dispatch(receiveDeck(deck))
+    dispatch(receiveDeck({deck: deck}))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
 
-export const deleteDeck = deck => dispatch => (
-  APIUtil.deleteDeck(deck).then(deck => dispatch(removeDeck(deck)))
+export const deleteDeck = deckId => dispatch => (
+  APIUtil.deleteDeck(deckId).then(deck => dispatch(removeDeck(deckId)))
 );

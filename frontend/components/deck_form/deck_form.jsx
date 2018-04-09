@@ -1,12 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import CreateQuestionContainer from '../question_form/create_question_form_container';
 
 class DeckForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = this.props.deck;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount () {
+    this.props.clearFormErrors();
   }
 
   update(field) {
@@ -17,8 +21,13 @@ class DeckForm extends React.Component {
     if (e) {
       e.preventDefault();
     }
-    this.props.submitForm(this.state).then(() => this.props.history.push('/decks'));
-    //have to change to show page later
+    debugger
+    this.props.submitForm(this.state).then(() => this.props.history.push(`/decks/${this.props.match.params.deckId}`));
+    //have to change to show page later, for the new deck how to get //the deckId???
+  }
+
+  handleDelete() {
+    this.props.deleteDeck(this.props.match.params.deckId).then(() => this.props.history.push('/profile'))
   }
 
   renderErrors() {
@@ -32,13 +41,12 @@ class DeckForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className='deck-form-container'>
         <form
           onSubmit={ this.handleSubmit }
           className='deck-form-box'>
-          <h3>{ this.props.formType }</h3>
+          <h3 className='deck-form-title'>{ this.props.formType }</h3>
           <div className='deck-form'>
             <label className='deck-form-label'>Deck Name
               <input type='text'
@@ -48,15 +56,38 @@ class DeckForm extends React.Component {
               <br />
             </label>
             <label className='deck-form-label'>Subject
+
               <select value={this.state.subjectId}
                 onChange={this.update('subjectId')}
                 className='deck-form-dropdown'>
-                <option defaultValue="">--Choose Subject--</option>
-                <option value='1'>History</option>
-                <option value='2'>Science</option>
-                <option value='3'>Math</option>
-                <option value='4'>Art</option>
-                <option value='5'>Language</option>
+                {this.props.formType === 'Create Deck' ? (
+                  <option defaultValue="">--Choose Subject--</option>
+                ) : ''}
+                {this.state.subject === 'History' ? (
+                  <option value='1' selected>History</option>
+                ) : (
+                  <option value='1'>History</option>
+                )}
+                {this.state.subject === 'Science' ? (
+                  <option value='2' selected>Science</option>
+                ) : (
+                  <option value='2'>Science</option>
+                )}
+                {this.state.subject === 'Math' ? (
+                  <option value='3' selected>Math</option>
+                ) : (
+                  <option value='3'>Math</option>
+                )}
+                {this.state.subject === 'Art' ? (
+                  <option value='4' selected>Art</option>
+                ) : (
+                  <option value='4'>Art</option>
+                )}
+                {this.state.subject === 'Language' ? (
+                  <option value='5' selected>Language</option>
+                ) : (
+                  <option value='5'>Language</option>
+                )}
               </select>
             </label>
             { this.renderErrors() }
@@ -64,6 +95,9 @@ class DeckForm extends React.Component {
             <input className='deck-form-submit'
               type='submit'
               value={ this.props.formType } />
+            { this.props.formType === 'Edit Deck' ? (
+              <CreateQuestionContainer />
+            ) : '' }
           </div>
         </form>
       </div>

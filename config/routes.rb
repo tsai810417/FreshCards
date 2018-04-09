@@ -3,11 +3,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resources :decks, only: [:index, :show, :create, :update, :destroy] do
       resources :questions, only: [:create]
-      resources :answers, only: [:create]
     end
-    resources :progresses, only: [:create, :show]
-    resources :answers, only: [:create, :show]
-    resources :questions, only: [:create, :show]
+    resources :progresses, only: [:create, :show, :update]
+    resources :questions, only: [:update, :destroy]
     resource :session, only: [:create, :destroy, :show]
   end
 

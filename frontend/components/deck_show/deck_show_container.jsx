@@ -6,13 +6,15 @@ import { selectDeckQuestions } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
   const deck = state.decks[ownProps.match.params.deckId];
   return ({
-    deck,
-    questions: selectDeckQuestions(state, deck)
+    deck: deck,
+    currentUser: state.session.currentUser,
+    questions: state.questions
   });
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchDeck: id => dispatch(fetchDeck(id))
+  fetchDeck: id => dispatch(fetchDeck(id)),
+  deleteDeck: id => dispatch(deleteDeck(id))
 });
 
 export default connect(
