@@ -13,12 +13,11 @@ class DeckIndex extends React.Component {
   render() {
     const deck = this.props.decks.map(deck => {
       return (
-        <tr className='deck-index-row'>
+        <tr key={deck.id} className='deck-index-row'>
           <td className='deck-title-td'>
             <Link to={ `/decks/${deck.id}` } className='deck-index-link'>
             {deck.title}</Link>
-        </td>
-
+          </td>
           <td className='deck-index-td'>{ deck.subject }</td>
           { this.props.indexType === 'currentuser' ? (
             <td className = 'deck-index-empty-td'>
@@ -32,7 +31,6 @@ class DeckIndex extends React.Component {
                 className='deck-add-question-link'>Add Card</Link>
             </td>
           ) : '' }
-
           { this.props.indexType === 'currentuser' ? (
             <td className='deck-index-empty-td'>
               <button className='deck-delete-button' onClick={ () => this.props.deleteDeck(deck.id).then(() => this.props.history.push('/profile')) }>Delete</button>
@@ -43,11 +41,15 @@ class DeckIndex extends React.Component {
     });
     return (
       <div className='deck-index-container'>
-        <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>
+        <div className='deck-index-buttons'>
+          <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>
+          { this.props.indexType === 'currentuser' ? (
+            <Link to='/decks' className='deck-to-index-link'>To All Decks</Link>
+          ) : ''}
+        </div>
         <table className='deck-index-table'>
           { deck }
         </table>
-
       </div>
     );
   }

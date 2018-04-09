@@ -4,6 +4,7 @@ import {
   RECEIVE_DECKS,
   REMOVE_DECK
 } from '../actions/deck_actions';
+import { REMOVE_QUESTION } from '../actions/question_actions';
 
 const decksReducer = (oldState = {}, action) => {
   Object.freeze(oldState);

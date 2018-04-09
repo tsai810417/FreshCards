@@ -7,18 +7,21 @@
   height: auto;
   font-size: 20px;
 
-
-  .link-to-create-deck {
-    color: #000000;
-    margin-bottom: 15px;
-    height: auto;
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px;
-    border: 3px solid #000000;
-    border-radius: 30px;
-    &:hover {
-      background-color: #E4E7E9;
+  .deck-index-buttons {
+    display: flex;
+    justify-content: space-between;
+    .link-to-create-deck, .deck-to-index-link {
+      color: #000000;
+      margin: 30px;
+      height: auto;
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px;
+      border: 3px solid #000000;
+      border-radius: 30px;
+      &:hover {
+        background-color: #E4E7E9;
+      }
     }
   }
 

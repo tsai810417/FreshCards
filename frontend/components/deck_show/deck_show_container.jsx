@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import DeckShow from './deck_show';
 import { fetchDeck, deleteDeck } from '../../actions/deck_actions';
-import { deleteQuestion } from '../../actions/question_action'
+import { deleteQuestion } from '../../actions/question_actions'
 // import { selectDeckQuestions } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {

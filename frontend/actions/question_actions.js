@@ -1,17 +1,19 @@
 import * as APIUtil from '../util/question_api_util';
+import { receiveDeck } from '../actions/deck_actions';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const CLEAR_FORM_ERRORS = 'CLEAR_FORM_ERRORS';
 
-export const receiveQuestion = question => ({
+
+export const receiveQuestion = payload => ({
   type: RECEIVE_QUESTION,
-  question
+  payload
 });
 
-export const removeQuestion = question => ({
+export const removeQuestion = id => ({
   type: REMOVE_QUESTION,
-  question
+  id
 });
 
 export const receiveErrors = errors => {
@@ -27,7 +29,7 @@ export const clearFormErrors = () => ({
 
 export const createQuestion = question => dispatch => (
   APIUtil.createQuestion(question).then(question => (
-    dispatch(receiveQuestion({question: question}))
+    dispatch(receiveQuestion({question}))
   ), err => {
     return dispatch(receiveErrors(err.responseJSON))
   })
@@ -41,6 +43,6 @@ export const updateQuestion = question => dispatch => (
   })
 );
 
-export const deleteQuestion = deckId => dispatch => (
-  APIUtil.deleteQuestion(deckId).then(question => dispatch(removeQuestion(deckId)))
+export const deleteQuestion = id => dispatch => (
+  APIUtil.deleteQuestion(id).then(payload => dispatch(receiveDeck(payload)))
 );

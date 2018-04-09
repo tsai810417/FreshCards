@@ -4,46 +4,12 @@ $jua: 'Jua', sans-serif;
 .login-signup, .header-group {
   display: inline-block;
 }
-.session-link{
-  display: inline-block;
-  position: relative;
-  width: auto;
-  height: 25px;
-  background-color: #7CA9A4;
-  font-size: 20px;
-  padding: 3px;
-  margin: 15px;
-  text-decoration: none;
-  border: 2px;
-  border-color: #CCD9D7;
-  border-radius: 5px;
-  border-style: outset;
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.header-group {
-  display: flex;
-  flex-direction: row;
-  .header-name {
-    &:hover {
-      color: #BFE1EE;
-    }
-    font-size: 30px;
-    margin: 15px;
-    text-shadow: 2px 2px #000000;
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
-  .header-button {
-    display: inline-block;
-    position: relative;
-    width: 100px;
-    height: 35px;
+.login-signup{
+  margin: auto 20px;
+  .session-link{
     background-color: #7CA9A4;
-    font-size: 20px;
-    padding: 3px;
+    font-size: 30px;
+    padding: 5px;
     margin: 15px;
     text-decoration: none;
     border: 2px;
@@ -52,10 +18,45 @@ $jua: 'Jua', sans-serif;
     border-style: outset;
     text-align: center;
     color: #FFFFFF;
+    &:hover {
+      color: #BFE1EE;
+      background-color: #818585;
+    }
+  }
+}
+
+.header-group {
+  margin: auto 20px;
+  display: flex;
+  flex-direction: row;
+  .header-name {
+    vertical-align: center;
+    margin-right: 20px;
+    padding-top: 7px;
+    font-size: 30px;
+    text-shadow: 2px 2px #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    &:hover {
+      color: #BFE1EE;
+    }
+  }
+
+  .header-button {
+    display: inline-block;
+    position: relative;
+    background-color: #7CA9A4;
+    font-size: 30px;
+    padding: 5px;
+    text-decoration: none;
+    border: 2px outset #CCD9D7;
+    border-radius: 5px;
+    text-align: center;
+    color: #FFFFFF;
     font-family: $jua;
     &:hover {
       color: #BFE1EE;
-      background-color: #818585; 
+      background-color: #818585;
     }
   }
 

@@ -3,10 +3,11 @@ $jua: 'Jua', sans-serif;
 
 .deck-form-container {
   margin: auto;
+  padding: 40px;
   width: 70%;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 200px;
   border: 2px solid #000000;
   border-radius: 8px;
   .deck-form-box {
@@ -14,7 +15,7 @@ $jua: 'Jua', sans-serif;
     justify-content: center;
     flex-direction: column;
     .deck-form-title {
-      font-size: 40px;
+      font-size: 50px;
       margin: auto;
       margin-top: 15px;
     }
@@ -25,11 +26,12 @@ $jua: 'Jua', sans-serif;
       flex-direction: column;
       margin: 15px;
       .deck-form-label {
-        font-size: 20px;
+        font-size: 30px;
+        margin: 15px;
         .deck-form-textbox {
           padding: 5px 10px;
           font-family: $jua;
-          font-size: 17px;
+          font-size: 30px;
           width: 50%;
           border-radius: 5px;
           background-color: #E1E0DD;
@@ -38,6 +40,9 @@ $jua: 'Jua', sans-serif;
         }
 
         .deck-form-dropdown {
+          padding: 10px;
+          font-family: $jua;
+          font-size: 30px;
           background-color: #E1E0DD;
           margin: 15px;
           option {
@@ -55,7 +60,7 @@ $jua: 'Jua', sans-serif;
         display: inline-block;
 
         background-color: #88C2EA;
-        font-size: 20px;
+        font-size: 30px;
         padding: 5px;
         text-decoration: none;
         border: 2px solid #CCD9D7;

@@ -2,7 +2,9 @@ class Api::DecksController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
   def index
-    if params[:id].nil?
+    if params[:title]
+      @decks = Deck.where(title: params[:title])
+    elsif params[:id].nil?
       @decks = Deck.all
     else
       @decks = current_user.decks
@@ -41,6 +43,7 @@ class Api::DecksController < ApplicationController
     deck.delete
     render json: deck
   end
+
   private
 
   # def deck_params

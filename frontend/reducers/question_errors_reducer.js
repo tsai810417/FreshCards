@@ -2,7 +2,7 @@ import {
   RECEIVE_QUESTION,
   RECEIVE_QUESTION_ERRORS,
   CLEAR_FORM_ERRORS
-} from '../actions/question_action';
+} from '../actions/question_actions';
 
 const questionErrorsReducer = (state = [], action) => {
   Object.freeze(state);

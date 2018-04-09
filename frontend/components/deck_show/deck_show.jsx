@@ -11,7 +11,6 @@ class DeckShow extends React.Component {
   }
 
   render() {
-    debugger
     let questions = '';
     if (!this.props.deck) {
       return (
@@ -20,7 +19,6 @@ class DeckShow extends React.Component {
     }
     if (this.props.deck.questions) {
       questions = this.props.deck.questions.map( qId => {
-        debugger
         return (
           <tr>
             <td className='deck-show-td'>{ this.props.questions[qId].body }</td>
@@ -29,7 +27,7 @@ class DeckShow extends React.Component {
               <td className='deck-show-empty-td'>
                 <button
                   className='deck-delete-question-button'
-                  onClick={() => this.props.deleteQuestion(qId).then(() => this.props.histroy.push('/decks'))}>Delete</button>
+                  onClick={() => this.props.deleteQuestion(qId)}>Delete</button>
               </td>
             ) : ''}
           </tr>

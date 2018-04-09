@@ -11,6 +11,12 @@ class Api::QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    @deck = @question.deck
+    render '/api/decks/show'
+  end
 
 
 end

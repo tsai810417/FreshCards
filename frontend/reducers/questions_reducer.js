@@ -1,13 +1,16 @@
 import merge from 'lodash/merge';
 import {
   RECEIVE_DECK,
+} from '../actions/deck_actions';
+import {
   RECEIVE_QUESTION,
   REMOVE_QUESTION
-} from '../actions/deck_actions';
+} from '../actions/question_actions';
 
 const questionsReducer = (state = {}, action) => {
+
   Object.freeze(state);
-  let newState;
+  let newState = {};
   switch (action.type) {
     case RECEIVE_DECK:
       if (action.payload.questions) {
@@ -23,7 +26,7 @@ const questionsReducer = (state = {}, action) => {
       break;
     case REMOVE_QUESTION:
       newState = merge({}, state);
-      delete(newState[action.payload.deck.id]);
+      delete(newState[action.id]);
       return newState;
       break;
     default:

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { createQuestion, clearFormErrors } from '../../actions/question_action';
+import { createQuestion, clearFormErrors } from '../../actions/question_actions';
 import QuestionForm from './question_form';
 
 const mapStateToProps = ({ errors }) => ({
