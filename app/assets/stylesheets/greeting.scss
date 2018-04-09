@@ -26,6 +26,9 @@ $jua: 'Jua', sans-serif;
   display: flex;
   flex-direction: row;
   .header-name {
+    &:hover {
+      color: #BFE1EE;
+    }
     font-size: 30px;
     margin: 15px;
     text-shadow: 2px 2px #000000;

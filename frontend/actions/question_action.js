@@ -41,6 +41,6 @@ export const updateQuestion = question => dispatch => (
   })
 );
 
-export const deleteQuestion = question => dispatch => (
-  APIUtil.deleteQuestion(question).then(question => dispatch(removeQuestion(question)))
+export const deleteQuestion = deckId => dispatch => (
+  APIUtil.deleteQuestion(deckId).then(question => dispatch(removeQuestion(deckId)))
 );

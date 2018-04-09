@@ -48,3 +48,13 @@ q:before, q:after {
 blockquote, q {
   quotes: "" "";
 }
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: inherit;
+  color: inherit;
+  font: inherit;
+}

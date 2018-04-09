@@ -3,12 +3,13 @@
   margin-top: 20px;
   margin-bottom: 40px;
   display: block;
-  width: 80%;
+  width: 70%;
   height: auto;
   font-size: 20px;
 
 
   .link-to-create-deck {
+    color: #000000;
     margin-bottom: 15px;
     height: auto;
     display: inline-block;
@@ -16,15 +17,16 @@
     padding: 10px;
     border: 3px solid #000000;
     border-radius: 30px;
-
-  }
-
-  .link-to-create-deck:hover {
-    background-color: #E4E7E9;
+    &:hover {
+      background-color: #E4E7E9;
+    }
   }
 
   .deck-index-table {
-    border: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    border-top: 2px solid black;
     width: 100%;
     height: auto;
     background-color: #BFE1EE;
@@ -36,14 +38,14 @@
       th {
         font-size: 25px;
       }
-      .deck-index-title-th {
-        width: 100px;
+      .deck-index-td {
+        width: 85px;
+        text-align: center;
+        align-self: center;
       }
       .deck-title-td {
-        width: 400px;
-      }
-      .deck-index-empty-td {
-        width: 100px;
+        width: 200px;
+        align-self: center;
       }
     }
     .deck-index-row-header {
@@ -54,25 +56,24 @@
       height: auto;
       color: #000000;
 
-      .deck-edit-link {
-        padding: 5px;
-        border: 1px solid #000000;
-        border-radius: 30px;
-        text-decoration: none;
-        color: #000000;
-      }
-
-      .deck-edit-link:hover {
-        background-color: #53BBE3;
+      &:hover {
+        text-decoration: underline;
+        font-weight: bold;
       }
     }
+    .deck-edit-link, .deck-add-question-link, .deck-delete-button {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      padding: 5px;
+      border: 1px solid #000000;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #000000;
 
-
-
-    .deck-index-row:hover {
-      background-color: #53BBE3;
-      .deck-edit-link {
-        background-color: #BFE1EE;
+      &:hover {
+        background-color: #53BBE3;
+        cursor: pointer;
       }
     }
   }
