@@ -4,8 +4,11 @@ import { Link , withRouter } from 'react-router-dom';
 class DecksSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchString: ''};
-    this.handleClick = this.handleClick.bind(this)
+    this.state = {searchString: '', showResults: false};
+    this.handleClick = this.handleClick.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+
   }
 
   componentWillMount() {
@@ -14,6 +17,14 @@ class DecksSearch extends React.Component {
 
   handleClick(e) {
     this.setState({ searchString: '' });
+  }
+
+  handleFocus(e) {
+    this.setState({ showResults: true })
+  }
+
+  handleBlur(e) {
+    this.setState({ searchString: '', showResults: false })
   }
 
   update(event) {
@@ -43,10 +54,14 @@ class DecksSearch extends React.Component {
     return (
       <div className='decks-search-container'>
         <input type='search'
-          onChange = { this.update.bind(this) } value={this.state.searchString} placeholder='Search the decks'
+          onChange={ this.update.bind(this) }
+          onFocus={ this.handleFocus }
+          onBlur={ this.handleBlur }
+          value={this.state.searchString}
+          placeholder='Search the decks'
           className='decks-search-input' />
         <ul className='decks-search-ul'>
-          { filteredDecks ? filteredDecks : '' }
+          { (this.state.showResults) ? filteredDecks : null }
         </ul>
 
       </div>
