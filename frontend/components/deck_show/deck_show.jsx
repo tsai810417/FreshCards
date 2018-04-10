@@ -19,21 +19,23 @@ class DeckShow extends React.Component {
     }
     if (this.props.deck.questions) {
       questions = this.props.deck.questions.map( qId => {
-        return (
-          <tr>
-            <td className='deck-show-td'>{ this.props.questions[qId].body }</td>
-            <td className='deck-show-td'>{ this.props.questions[qId].answer }</td>
-            { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
-              <td className='deck-show-empty-td'>
-                <button
-                  className='deck-delete-question-button'
-                  onClick={() => this.props.deleteQuestion(qId)}>Delete</button>
-              </td>
-            ) : ''}
-          </tr>
+        if (this.props.questions[qId]) {
+          return (
+            <tr>
+              <td className='deck-show-td'>{ this.props.questions[qId].body }</td>
+              <td className='deck-show-td'>{ this.props.questions[qId].answer }</td>
+              { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
+                <td className='deck-show-empty-td'>
+                  <button
+                    className='deck-delete-question-button'
+                    onClick={() => this.props.deleteQuestion(qId)}>Delete</button>
+                </td>
+              ) : ''}
+            </tr>
+          );
+        }
           // qId will not be avaliable when the button is clicked!
           // i want to refresh the same page after delete
-        );
       })
     }
     return (
@@ -50,6 +52,7 @@ class DeckShow extends React.Component {
         { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
           <button className='deck-delete-deck-button' onClick={ () => this.props.deleteDeck(this.props.match.params.deckId).then(()=> this.props.history.push('/profile')) }>Delete Deck</button>
         ) : '' }
+        <Link to={ `/decks/${ this.props.match.params.deckId }/study`} className='deck-study-link'>Study Deck</Link>
         </div>
         <h1 className='deck-show-title'>{ `${this.props.deck.title} Cards Preview` }</h1>
         <h3 className='deck-show-subject'>Subject: { this.props.deck.subject }</h3>

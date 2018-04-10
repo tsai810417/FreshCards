@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
+
+.decks-search-container {
+  margin: auto;
+  width: 400px;
+  margin-right: 0 15px;
+  .decks-search-input {
+    font-family: $jua;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 25px;
+    width: 100%;
+    padding: 5px;
+  }
+  .decks-search-ul {
+    width: 550px;
+    background-color: #B8BBBB;
+    backface-visibility: hidden;
+    .decks-search-li {
+      font-weight: lighter;
+      font-size: 25px;
+      display: flex;
+      justify-content: space-between;
+      border: 0.5px solid #000000;
+      padding: 5px;
+      .decks-search-title {
+        margin: 10px;
+      }
+      .decks-search-subject {
+        margin: 10px;
+      }
+    }
+  }
+}

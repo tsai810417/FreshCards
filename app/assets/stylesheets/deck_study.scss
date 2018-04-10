@@ -1,0 +1,54 @@
+.deck-study-container {
+  font-size: 40px;
+  width: 70%;
+  margin: auto;
+  margin-top: 120px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  .deck-study-progress {
+    display: inline-block;
+    margin: 30px;
+  }
+  .deck-study-title {
+    width: 70%;
+    display: inline-block;
+    margin: 30px;
+  }
+  .deck-study-content {
+    margin: auto;
+    width: 80%;
+    height:300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    .deck-study-question, .deck-study-answer {
+      width: 80%;
+      text-align: center;
+      margin: 20px 20px;
+      font-size: 30px;
+    }
+    .activate-button {
+      height: 50px;
+      margin: auto;
+      font-size: 50px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .fake-button {
+      height: 50px;
+      margin: auto;
+      font-size: 50px;
+    }
+  }
+  .deck-study-reveal {
+    margin: 15px 42%;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}

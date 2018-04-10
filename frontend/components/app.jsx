@@ -17,12 +17,15 @@ import CreateDeckFormContainer from './deck_form/create_deck_form_container';
 import EditDeckFormContainer from './deck_form/edit_deck_form_container';
 import DeckShowContainer from './deck_show/deck_show_container';
 import CreateQuestionContainer from './question_form/create_question_form_container';
+import DeckStudyContainer from './deck_study/deck_study_container';
+import DecksSearchContainer from './deck_search/decks_search_container';
 
 const App = () => (
   <div>
     <header>
       <a className='logo-a-tag' href='#/'><img className='logo-img' src='https://github.com/tsai810417/resources/blob/master/Logo.png?raw=true'></img></a>
       <h1 className='site-title'>Welcome to FreshCards</h1>
+      <DecksSearchContainer />
       <GreetingContainer />
     </header>
     <Switch>
@@ -34,6 +37,7 @@ const App = () => (
       <ProtectedRoute path="/decks/:deckId/edit" component={ EditDeckFormContainer } />
       <Route exact path="/decks/:deckId" component={ DeckShowContainer } />
       <ProtectedRoute exact path="/decks/:deckId/questions/new" component= { CreateQuestionContainer } />
+      <ProtectedRoute exact path="/decks/:deckId/study" component={ DeckStudyContainer } />
     </Switch>
   </div>
 );

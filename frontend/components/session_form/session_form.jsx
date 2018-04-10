@@ -78,8 +78,8 @@ class SessionForm extends React.Component {
               <button className='session-form-submit' onClick={ this.handdleGuestLogin }>Guest Login</button>
             ) : '' }
           </div>
+          { this.props.navlink }
         </form>
-        { this.props.navlink }
 
       </div>
     );

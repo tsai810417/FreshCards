@@ -3,7 +3,7 @@ $jua: 'Jua', sans-serif;
 
 .session-form-container {
   margin: auto;
-  margin-top: 200px;
+  margin-top: 150px;
   font-family: $jua;
   display: block;
   width: 550px;
@@ -55,6 +55,9 @@ $jua: 'Jua', sans-serif;
     text-align: center;
     font-family: $jua;
     color: #FFFFFF;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   .error-list {
@@ -62,9 +65,11 @@ $jua: 'Jua', sans-serif;
   }
 
   .session-p {
+    margin: auto;
     position:relative;
     margin: 30px;
     padding-bottom: 10px;
+    font-size: 18px;
 
   }
 
@@ -75,10 +80,5 @@ $jua: 'Jua', sans-serif;
     width: 50%;
     border-radius: 5px;
     background-color: #E1E0DD;
-    color: #FFFFFF;
-  }
-
-  .session-form-submit:hover {
-    cursor: pointer;
   }
 }

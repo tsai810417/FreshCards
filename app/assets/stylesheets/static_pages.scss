@@ -6,6 +6,7 @@ $jua: 'Jua', sans-serif;
 
 header {
   width: 100%;
+  height: 150px;
   font-family: $jua;
   display: block;
   display: flex;
@@ -22,5 +23,5 @@ header {
 }
 
 .logo-img {
-  width: 150px;
+  height: 150px;
 }
