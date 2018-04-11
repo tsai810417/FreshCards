@@ -86,6 +86,36 @@ class DeckForm extends React.Component {
                 ) : (
                   <option value='5'>Language</option>
                 )}
+                {this.state.subject === 'Law' ? (
+                  <option value='6' selected>Law</option>
+                ) : (
+                  <option value='6'>Law</option>
+                )}
+                {this.state.subject === 'Medical' ? (
+                  <option value='7' selected>Medical</option>
+                ) : (
+                  <option value='7'>Medical</option>
+                )}
+                {this.state.subject === 'Business' ? (
+                  <option value='8' selected>Business</option>
+                ) : (
+                  <option value='8'>Business</option>
+                )}
+                {this.state.subject === 'Economics' ? (
+                  <option value='9' selected>Economics</option>
+                ) : (
+                  <option value='9'>Economics</option>
+                )}
+                {this.state.subject === 'Technology' ? (
+                  <option value='10' selected>Technology</option>
+                ) : (
+                  <option value='10'>Technology</option>
+                )}
+                {this.state.subject === 'Humanities' ? (
+                  <option value='11' selected>Humanities</option>
+                ) : (
+                  <option value='11'>Humanities</option>
+                )}
               </select>
             </label>
             { this.renderErrors() }
