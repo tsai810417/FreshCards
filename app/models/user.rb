@@ -22,6 +22,8 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Deck
 
+  has_many :progresses
+
 
   def password=(password)
     @password = password

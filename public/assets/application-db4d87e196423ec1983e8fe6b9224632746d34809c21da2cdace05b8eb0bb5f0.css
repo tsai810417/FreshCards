@@ -7,7 +7,6 @@
 /* line 7, /Users/chengtsai/Desktop/FreshCard/app/assets/stylesheets/greeting.scss */
 .session-link {
   display: inline-block;
-  position: relative;
   width: auto;
   height: 25px;
   background-color: #7CA9A4;
@@ -38,7 +37,6 @@
 /* line 35, /Users/chengtsai/Desktop/FreshCard/app/assets/stylesheets/greeting.scss */
 .header-group .header-button {
   display: inline-block;
-  position: relative;
   width: 100px;
   height: 35px;
   background-color: #7CA9A4;
@@ -155,7 +153,6 @@ blockquote, q {
 }
 /* line 39, /Users/chengtsai/Desktop/FreshCard/app/assets/stylesheets/session.scss */
 .session-form-container .session-form-submit {
-  position: relative;
   width: auto;
   height: auto;
   background-color: #7CA9A4;
@@ -172,7 +169,6 @@ blockquote, q {
 }
 /* line 56, /Users/chengtsai/Desktop/FreshCard/app/assets/stylesheets/session.scss */
 .session-form-container .session-p {
-  position: relative;
   margin: 30px;
   padding-bottom: 10px;
 }
@@ -204,7 +200,6 @@ header {
 /* line 15, /Users/chengtsai/Desktop/FreshCard/app/assets/stylesheets/static_pages.scss */
 .site-title {
   display: inline-block;
-  position: relative;
   margin: auto;
   font-size: 50px;
   font-weight: bold;
@@ -230,4 +225,3 @@ header {
 
 
  */
-

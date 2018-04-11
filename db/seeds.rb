@@ -6,7 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
+User.destroy_all
+Deck.destroy_all
+Subject.destroy_all
+Question.destroy_all
+Progress.destroy_all
+
 User.create([{ username: 'Guest', password: '123456', email: 'guest_login@' }])
+
+guest_user = User.find_by(username: 'Guest')
 
 sub_id = Array(1..5)
 user_id = Array(1..10)
@@ -20,7 +29,13 @@ Subject.create([
   {title: 'Science'},
   {title: 'Math'},
   {title: 'Art'},
-  {title: 'Language'}
+  {title: 'Language'},
+  {title: 'Law'},
+  {title: 'Medical'},
+  {title: 'Business'},
+  {title: 'Economics'},
+  {title: 'Technology'},
+  {title: 'Humanities'}
 ])
 
 10.times do
@@ -41,3 +56,8 @@ Question.create!([
   { body: 'I am Q3-3', answer: 'I am A3-3', deck_id: 3 },
   { body: 'I am Q3-4', answer: 'I am A3-4', deck_id: 3 }
 ])
+
+Progress.create!(user_id: guest_user.id, question_id: 1, deck_id: 1, score: 1)
+Progress.create!(user_id: guest_user.id, question_id: 2, deck_id: 1, score: 1)
+Progress.create!(user_id: guest_user.id, question_id: 3, deck_id: 1, score: 1)
+Progress.create!(user_id: guest_user.id, question_id: 4, deck_id: 1, score: 1)

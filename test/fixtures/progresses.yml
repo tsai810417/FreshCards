@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: progresses
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  question_id :integer          not null
+#  deck_id     :integer          not null
+#  score       :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  deck_id: 1
+  percentage: 
+  stat: 
+
+two:
+  user_id: 1
+  deck_id: 1
+  percentage: 
+  stat: 

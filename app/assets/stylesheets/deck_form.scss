@@ -26,13 +26,14 @@ $jua: 'Jua', sans-serif;
       flex-direction: column;
       margin: 15px;
       .deck-form-label {
+        width: 600px;
         font-size: 30px;
         margin: 15px;
         .deck-form-textbox {
           padding: 5px 10px;
           font-family: $jua;
           font-size: 30px;
-          width: 50%;
+          width: 60%;
           border-radius: 5px;
           background-color: #E1E0DD;
           margin: 15px;
@@ -40,21 +41,16 @@ $jua: 'Jua', sans-serif;
         }
 
         .deck-form-dropdown {
-          padding: 10px;
+          width: auto;
           font-family: $jua;
           font-size: 30px;
           background-color: #E1E0DD;
           margin: 15px;
-          option {
-            font-family: $jua;
-            margin: 15px;
-          }
         }
       }
       .deck-form-submit {
         font-family: $jua;
         margin: 15px;
-        position: relative;
         width: auto;
         height: auto;
         display: inline-block;

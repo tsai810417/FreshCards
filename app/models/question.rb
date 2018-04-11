@@ -14,4 +14,5 @@ class Question < ApplicationRecord
   validates :body, :answer, :deck_id, presence: true
 
   belongs_to :deck
+  has_many :progresses
 end
