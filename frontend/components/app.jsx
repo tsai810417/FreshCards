@@ -19,6 +19,7 @@ import DeckShowContainer from './deck_show/deck_show_container';
 import CreateQuestionContainer from './question_form/create_question_form_container';
 import DeckStudyContainer from './deck_study/deck_study_container';
 import DecksSearchContainer from './deck_search/decks_search_container';
+import LandingContainer from './landing/landing_container';
 
 const App = () => (
   <div>
@@ -29,6 +30,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
+      <Route exact path='/' component={ LandingContainer } />
       <AuthRoute path="/login" component={ LoginFormContainer } />
       <AuthRoute path="/signup" component={ SignupFormContainer } />
       <Route exact path="/decks" component={ DeckIndexContainer } />

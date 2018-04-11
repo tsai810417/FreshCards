@@ -4,8 +4,9 @@ import { Link , withRouter } from 'react-router-dom';
 class DecksSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchString: '', showResults: false};
+    this.state = {searchString: '', showResults: true};
     this.handleClick = this.handleClick.bind(this);
+    this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
 
@@ -16,6 +17,7 @@ class DecksSearch extends React.Component {
   }
 
   handleClick(e) {
+    document.removeEventListener('click', () => this.setState({ searchString: '', showResults: false }))
     this.setState({ searchString: '' });
   }
 
@@ -24,11 +26,17 @@ class DecksSearch extends React.Component {
   }
 
   handleBlur(e) {
-    this.setState({ searchString: '', showResults: false })
+    e.preventDefault();
+  }
+
+  handleSearchClick(e) {
   }
 
   update(event) {
+    document.addEventListener('click', () => this.setState({ searchString: '', showResults: true }))
+
     this.setState({ searchString: event.target.value });
+
   }
 
   render() {
