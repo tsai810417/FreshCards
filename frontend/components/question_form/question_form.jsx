@@ -45,7 +45,7 @@ class QuestionForm extends React.Component {
                 value={ this.state.body }
                 onChange={ this.update('body') }
                 className='question-form-textbox' />
-              <br />
+              <p>Max. 250 charaters</p>
             </label>
 
             <label className='question-form-label'>Answer
@@ -53,7 +53,7 @@ class QuestionForm extends React.Component {
                 value={ this.state.answer }
                 onChange={ this.update('answer') }
                 className='question-form-textbox' />
-              <br />
+              <p>Max. 250 charaters</p>
             </label>
 
             { this.renderErrors() }

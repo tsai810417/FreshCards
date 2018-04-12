@@ -2,17 +2,18 @@
   width: 70%;
   margin: auto;
   margin-top: 15px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   .deck-show-title {
   text-align: center;
-  font-size: 35px;
+  font-size: 30px;
   margin: 15px;
   }
   .deck-show-subject {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   margin: 15px;
   }
   .deck-show-table {
@@ -22,7 +23,7 @@
       align-items: center;
       margin: 15px;
       .deck-show-header {
-        font-size: 28px;
+        font-size: 23px;
         height: 50px;
         vertical-align: middle;
         text-align: center;
@@ -30,7 +31,7 @@
       .deck-show-td {
         border: 1px solid #CFD2D4;
         vertical-align: middle;
-        font-size: 20px;
+        font-size: 18px;
         width: 250px;
         height: 100px;
         text-align: center;
@@ -51,12 +52,12 @@
 
   .deck-to-index-button {
     margin: auto;
-    width: 300px;
+    width: 200px;
     height: auto;
     display: inline-block;
     margin-top: 20px;
     background-color: #88C2EA;
-    font-size: 35px;
+    font-size: 20px;
     padding: 5px;
     text-decoration: none;
     border: 2px solid #CCD9D7;

@@ -22,6 +22,7 @@ class DecksSearch extends React.Component {
   }
 
   handleFocus(e) {
+    this.props.fetchSearch();
     this.setState({ showResults: true })
   }
 

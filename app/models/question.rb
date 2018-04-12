@@ -12,7 +12,7 @@
 
 class Question < ApplicationRecord
   validates :body, :answer, :deck_id, presence: true
-
+  validates :body, :answer, length: { maximum: 250 }
   belongs_to :deck
   has_many :progresses
 end

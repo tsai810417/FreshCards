@@ -52,7 +52,9 @@ class DeckShow extends React.Component {
         { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
           <button className='deck-delete-deck-button' onClick={ () => this.props.deleteDeck(this.props.match.params.deckId).then(()=> this.props.history.push('/profile')) }>Delete Deck</button>
         ) : '' }
-        <Link to={ `/decks/${ this.props.match.params.deckId }/study`} className='deck-study-link'>Study Deck</Link>
+        { this.props.deck.questions && this.props.deck.questions.length !== 0 ? (
+          <Link to={ `/decks/${ this.props.match.params.deckId }/study`} className='deck-study-link'>Study Deck</Link>
+        ) : ''}
         </div>
         <h1 className='deck-show-title'>{ `${this.props.deck.title} Cards Preview` }</h1>
         <h3 className='deck-show-subject'>Subject: { this.props.deck.subject }</h3>

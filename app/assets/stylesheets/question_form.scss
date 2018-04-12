@@ -25,6 +25,10 @@ $jua: 'Jua', sans-serif;
       .question-form-label {
         display: flex;
         flex-direction: column;
+        p {
+          font-size: 15px;
+          margin-bottom: 15px;
+        }
         .question-form-textbox {
           &:focus {
             border: solid #000000;

@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Jua');
 $jua: 'Jua', sans-serif;
 
-.login-signup, .header-group {
-  display: inline-block;
-}
 .login-signup{
-  margin: auto 20px;
-  .session-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button{
     background-color: #7CA9A4;
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px;
     margin: 15px;
     text-decoration: none;
@@ -33,7 +33,7 @@ $jua: 'Jua', sans-serif;
     vertical-align: center;
     margin-right: 20px;
     padding-top: 7px;
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 2px 2px #000000;
     color: #FFFFFF;
     text-decoration: none;
@@ -45,7 +45,7 @@ $jua: 'Jua', sans-serif;
   .header-button {
     display: inline-block;
     background-color: #7CA9A4;
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px;
     text-decoration: none;
     border: 2px outset #CCD9D7;

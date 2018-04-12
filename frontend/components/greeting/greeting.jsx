@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const sessionLinks = () => (
+const sessionLinks = (history) => (
   <nav className="login-signup">
-    <Link to="/login" className='session-link'>Log In</Link>
-    <Link to="/signup" className='session-link'>Sign Up</Link>
+    <button onClick={() => history.push('/login')}>Log In</button>
+    <button onClick={() => history.push('/signup')}>Sign Up</button>
   </nav>
 );
 
@@ -23,7 +23,7 @@ const personalGreeting = (currentUser, logout, history) => {
 
 const Greeting = ( props ) => {
   return (
-    props.currentUser ? personalGreeting(props.currentUser, props.logout, props.history) : sessionLinks()
+    props.currentUser ? personalGreeting(props.currentUser, props.logout, props.history) : sessionLinks(props.history)
   )
 };
 
