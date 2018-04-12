@@ -72,7 +72,7 @@ class DeckStudy extends React.Component {
       return (
         <div>
           <h3>Finish Studying</h3>
-          <h3>{`Your mastering of ${this.props.deck.title} is ${this.props.progress.mastery}`}</h3>
+          <h3>{`Your mastering of ${this.props.deck.title} is ${this.props.progress.mastery}%`}</h3>
           <Link to={ '/decks/' }>Exit</Link>
           <button onClick={ this.handleRestart }>Restart</button>
         </div>
