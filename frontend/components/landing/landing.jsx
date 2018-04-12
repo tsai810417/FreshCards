@@ -29,7 +29,7 @@ class Landing extends React.Component {
           <Link to='/decks' className='link-to-all-decks'>Browse All Decks</Link>
           <div className='decks-links'>
             <Link to='/decks' className='ochem'>
-              <h3>Organic Chemistry 101A</h3>
+              <h3>Chemistry 101A</h3>
             </Link>
             <Link to='/decks' className='geo'>
               <h3>Geometry 101A</h3>

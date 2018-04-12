@@ -14,17 +14,20 @@ Question.destroy_all
 Progress.destroy_all
 
 User.create([{ username: 'Guest', password: '123456', email: 'guest_login@' }])
+User.create([{ username: 'Admin', password: '123456', email: 'admin@' }])
 
 guest_user = User.find_by(username: 'Guest')
+admin = User.find_by(username: 'Admin')
+
 
 # sub_ids = Array(1..5)
 # user_id = Array(1..10)
 
 sub_ids = []
-user_ids = [guest_user.id]
+user_ids = [guest_user.id, admin.id]
 deck_ids = []
 
-10.times do
+5.times do
   User.create([{ username: Faker::Name.name, password: '123456', email: Faker::Internet.email }])
   user_ids.push(User.last.id)
 end
@@ -62,8 +65,8 @@ end
 #   {title: 'Humanities'}
 # ])
 
-10.times do
-  Deck.create!([{ title: Faker::Educator.course, author_id: user_ids.sample, subject_id: sub_ids.sample }])
+6.times do
+  Deck.create!([{ title: Faker::Educator.course, author_id: admin.id, subject_id: sub_ids.sample }])
   deck_ids.push(Deck.last.id)
 end
 
@@ -90,10 +93,10 @@ end
 #   { body: 'I am Q3-3', answer: 'I am A3-3', deck_id: 3 },
 #   { body: 'I am Q3-4', answer: 'I am A3-4', deck_id: 3 }
 # ])
-
-deck1 = Deck.first
-deck1_question_ids = deck1.questions.pluck(:id)
-
-deck1_question_ids.each do |q_id|
-  Progress.create!(user_id: guest_user.id, question_id: q_id, deck_id: deck1.id, score: 1)
-end
+# 
+# deck1 = Deck.first
+# deck1_question_ids = deck1.questions.pluck(:id)
+#
+# deck1_question_ids.each do |q_id|
+#   Progress.create!(user_id: guest_user.id, question_id: q_id, deck_id: deck1.id, score: 1)
+# end
