@@ -21,7 +21,7 @@ class DeckShow extends React.Component {
       questions = this.props.deck.questions.map( qId => {
         if (this.props.questions[qId]) {
           return (
-            <tr>
+            <tr key={ qId }>
               <td className='deck-show-td'>{ this.props.questions[qId].body }</td>
               <td className='deck-show-td'>{ this.props.questions[qId].answer }</td>
               { this.props.currentUser && this.props.currentUser.id === this.props.deck.authorId ? (
@@ -57,11 +57,13 @@ class DeckShow extends React.Component {
         <h1 className='deck-show-title'>{ `${this.props.deck.title} Cards Preview` }</h1>
         <h3 className='deck-show-subject'>Subject: { this.props.deck.subject }</h3>
         <table className='deck-show-table'>
-          <tr>
-            <th className='deck-show-header'>Questions</th>
-            <th className='deck-show-header'>Answers</th>
-          </tr>
-          { questions }
+          <tbody>
+            <tr>
+              <th className='deck-show-header'>Questions</th>
+              <th className='deck-show-header'>Answers</th>
+            </tr>
+            { questions }
+          </tbody>
         </table>
 
 

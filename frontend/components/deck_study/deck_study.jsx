@@ -70,11 +70,16 @@ class DeckStudy extends React.Component {
     if (this.state.loading) return null;
     if (this.state.finish) {
       return (
-        <div>
-          <h3>Finish Studying</h3>
-          <h3>{`Your mastering of ${this.props.deck.title} is ${this.props.progress.mastery}%`}</h3>
-          <Link to={ '/decks/' }>Exit</Link>
-          <button onClick={ this.handleRestart }>Restart</button>
+        <div className='deck-study-container'>
+          <div className='deck-study-mastery'>
+            <p>Mastery</p>
+            <h3>{ `${this.props.progress.mastery}%` }</h3>
+          </div>
+          <h1 className='deck-study-title'>{ `You finished studying: ${this.props.deck.title}!` }</h1>
+          <div className='deck-study-selection'>
+            <Link to={ `/decks/${this.props.deck.id}` }>Exit</Link>
+            <button onClick={ this.handleRestart }>Restart</button>
+          </div>
         </div>
       )
     }
@@ -82,24 +87,30 @@ class DeckStudy extends React.Component {
     const { deck, questions } = this.props;
     const qIdx = Object.keys(questions);
     const qCount = qIdx.length;
-
     let show;
 
     if (this.props.progress.reveal) {
       show = (
-        <h3 className='deck-study-question'>{ questions[(qIdx[this.props.progress.questionIdx])].answer }</h3>
+        <div className='study-deck-card'>
+          <h3>{ questions[(qIdx[this.props.progress.questionIdx])].answer }</h3>
+        </div>
       )
     } else {
       show = (
-        <h3 className='deck-study-answer'>{ questions[qIdx[this.props.progress.questionIdx]].body }</h3>
+        <div className='study-deck-card'>
+          <h3>{ questions[qIdx[this.props.progress.questionIdx]].body }</h3>
+        </div>
       )
     }
 
     return (
       <div className='deck-study-container'>
-        <h1 className='deck-study-title'>{ deck.title }</h1>
-        <h3 className='deck-study-progress'>{ `${ this.props.progress.questionIdx + 1 }/${ qIdx.length }` }</h3>
-        <p className='deck-study-mastery'>{ `${this.props.progress.mastery}%` }</p>
+        <div className='deck-study-mastery'>
+          <p>Mastery</p>
+          <h3>{ `${this.props.progress.mastery}%` }</h3>
+        </div>
+        <h1 className='deck-study-title'>{ `Studying: ${deck.title}` }</h1>
+        <h3 className='deck-study-progress'>{ `${ this.props.progress.questionIdx + 1 } of ${ qIdx.length }` }</h3>
         <div className='deck-study-content'>
           { this.props.progress.questionIdx > 0 ? (
             <button className='activate-button' onClick={ this.handlePrev }>&#8678;</button>
@@ -109,8 +120,10 @@ class DeckStudy extends React.Component {
             <button className='activate-button' onClick={ this.handleNext }>&#8680;</button>
           ) : <button className='fake-button'>&#8680;</button>}
         </div>
+        <div className='deck-study-selection'>
           { this.props.progress.reveal ? (
-            <form onSubmit={ this.handleSubmit }
+            <form className='deck-study-form'
+              onSubmit={ this.handleSubmit }
               onChange={ (e) => this.update(e) }
               name='mastery'>
               <p>Please select mastery level:</p>
@@ -136,6 +149,7 @@ class DeckStudy extends React.Component {
           ) : (
             <button className='deck-study-reveal' onClick={ this.handleReveal }>Reveal</button>
           )}
+        </div>
       </div>
     )
   }

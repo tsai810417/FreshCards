@@ -1,31 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+$jua: 'Jua', sans-serif;
+
 .deck-study-container {
-  font-size: 40px;
-  width: 70%;
+  width: 80%;
+  font-size: 30px;
   margin: auto;
-  margin-top: 120px;
   margin-bottom: 100px;
-  border: 2px solid #000000;
-  border-radius: 5px;
-  .deck-study-progress {
-    display: inline-block;
-    margin: 30px;
-  }
   .deck-study-title {
-    width: 70%;
-    display: inline-block;
+    margin-left: 250px;
+  }
+  .deck-study-progress {
+    font-size: 25px;
+    text-align: right;
+    margin-right: 150px;
+  }
+  .deck-study-mastery {
+    font-size: 25px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+    padding: 30px;
+    border: 1px solid #000000;
+    border-radius: 100%;
     margin: 30px;
   }
   .deck-study-content {
     margin: auto;
-    width: 80%;
     height:300px;
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    .deck-study-question, .deck-study-answer {
+    .study-deck-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #000000;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px;;
       width: 80%;
+      height: 200px;
       text-align: center;
-      margin: 20px 20px;
       font-size: 30px;
     }
     .activate-button {
@@ -42,13 +61,69 @@
       font-size: 50px;
     }
   }
-  .deck-study-reveal {
-    margin: 15px 42%;
-    padding: 10px;
-    border: 2px solid #000000;
-    border-radius: 15px;
-    &:hover {
-      cursor: pointer;
+  .deck-study-selection {
+    display: flex;
+    justify-content: center;
+    a, button {
+      font-family: $jua;
+      color: #000000;
+      margin: 15px;
+      width: auto;
+      height: auto;
+      display: inline-block;
+
+      font-size: 30px;
+      padding: 15px;
+      text-decoration: none;
+      border: 2px solid #CCD9D7;
+      border-radius: 5px;
+      text-align: center;
+
+      &:hover {
+        background-color: #B8BBBB;
+        border-style: outset;
+        cursor: pointer;
+      }
+    }
+    .deck-study-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        label {
+          margin-top: 30px;
+          input {
+            border: 0px;
+            width: 100%;
+            height: 0.5em;
+          }
+        }
+      }
+      input {
+        font-family: $jua;
+        margin: 15px;
+        width: auto;
+        height: auto;
+        display: inline-block;
+
+        font-size: 30px;
+        padding: 15px;
+        text-decoration: none;
+        border: 2px solid #CCD9D7;
+        border-radius: 5px;
+        text-align: center;
+
+        &:hover {
+          background-color: #B8BBBB;
+          border-style: outset;
+          cursor: pointer;
+        }
+      }
     }
   }
 

@@ -25,7 +25,7 @@ const App = () => (
   <div>
     <header>
       <a className='logo-a-tag' href='#/'><img className='logo-img' src='https://github.com/tsai810417/resources/blob/master/Logo.png?raw=true'></img></a>
-      <h1 className='site-title'>Welcome to FreshCards</h1>
+      <Link to='/' className='site-title'>Welcome to FreshCards</Link>
       <DecksSearchContainer />
       <GreetingContainer />
     </header>
