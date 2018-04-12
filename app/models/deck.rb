@@ -21,19 +21,18 @@ class Deck < ApplicationRecord
   has_many :questions
   has_many :progresses
 
-  # def progress(user_id)
+  def progress(user_id)
   #   # debugger
   #   #calculation
   #   #1. find only the progresses FOR THE CURRENT USER
-  #   progresses = self.progresses.where(user_id: user_id)
-  #
+    progresses = self.progresses.where(user_id: user_id)
   #   #2. Get all the scores ^
-  #   progress_score = 0
-  #   progresses.each do |progress|
-  #     progress_score += progress.score
-  #   end
+    progress_score = 0
+    progresses.each do |progress|
+      progress_score += progress.score
+    end
   #
   #   #3. Calculate adding scores / num q * 5.
-  #   return (progress_score / (5.0 * progresses.length)) * 100
-  # end
+    return ((progress_score / (5.0 * self.questions.length)) * 100).floor
+  end
 end

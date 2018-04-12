@@ -3,7 +3,8 @@ import {
   START_STUDY,
   NEXT_QUESTION,
   PREV_QUESTION,
-  REVEAL_ANSWER
+  REVEAL_ANSWER,
+  RECEIVE_MASTERY
 } from '../actions/progress_actions';
 
 const initialState = ({
@@ -22,16 +23,20 @@ const progressReducer = (oldState = initialState, action) => {
     case NEXT_QUESTION:
       newState['questionIdx'] = oldState['questionIdx'] + 1
       newState['reveal'] = false;
-      return newState;
+      return merge({}, oldState, newState);
       break;
     case PREV_QUESTION:
       newState['questionIdx'] = oldState['questionIdx'] - 1
       newState['reveal'] = false;
-      return newState;
+      return merge({}, oldState, newState)
       break;
     case REVEAL_ANSWER:
       newState['reveal'] = true;
       return merge({}, oldState, newState);
+      break;
+    case RECEIVE_MASTERY:
+      newState = merge({}, oldState, action.mastery);
+      return newState;
       break;
     default:
       return oldState;

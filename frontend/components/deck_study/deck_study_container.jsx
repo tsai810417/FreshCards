@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import DeckStudy from './deck_study';
 import { fetchDeck } from '../../actions/deck_actions';
 import {
-  startStudy,
   nextQuestion,
   prevQuestion,
-  revealAnswer
+  revealAnswer,
+  receiveMastery,
+  updateProgress,
+  fetchProgress
 } from '../../actions/progress_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,10 +23,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchDeck: id => dispatch(fetchDeck(id)),
-  startStudy: () => dispatch(startStudy()),
   nextQuestion: () => dispatch(nextQuestion()),
   prevQuestion: () => dispatch(prevQuestion()),
-  revealAnswer: () => dispatch(revealAnswer())
+  revealAnswer: () => dispatch(revealAnswer()),
+  receiveMastery: mastery => dispatch(receiveMastery()),
+  fetchProgress: deckId => dispatch(fetchProgress(deckId)),
+  updateProgress: progress => dispatch(updateProgress(progress))
 });
 
 export default connect(

@@ -55,66 +55,66 @@ class DeckForm extends React.Component {
             </label>
             <label className='deck-form-label'>Subject
 
-              <select value={this.state.subjectId}
-                onChange={this.update('subjectId')}
+              <select value={this.state.subject}
+                onChange={this.update('subject')}
                 className='deck-form-dropdown'>
                 {this.props.formType === 'Create Deck' ? (
                   <option defaultValue="">--Choose Subject--</option>
                 ) : ''}
                 {this.state.subject === 'History' ? (
-                  <option value='1' selected>History</option>
+                  <option value='History' selected>History</option>
                 ) : (
-                  <option value='1'>History</option>
+                  <option value='History'>History</option>
                 )}
                 {this.state.subject === 'Science' ? (
-                  <option value='2' selected>Science</option>
+                  <option value='Science' selected>Science</option>
                 ) : (
-                  <option value='2'>Science</option>
+                  <option value='Science'>Science</option>
                 )}
                 {this.state.subject === 'Math' ? (
-                  <option value='3' selected>Math</option>
+                  <option value='Math' selected>Math</option>
                 ) : (
-                  <option value='3'>Math</option>
+                  <option value='Math'>Math</option>
                 )}
                 {this.state.subject === 'Art' ? (
-                  <option value='4' selected>Art</option>
+                  <option value='Art' selected>Art</option>
                 ) : (
-                  <option value='4'>Art</option>
+                  <option value='Art'>Art</option>
                 )}
                 {this.state.subject === 'Language' ? (
-                  <option value='5' selected>Language</option>
+                  <option value='Language' selected>Language</option>
                 ) : (
-                  <option value='5'>Language</option>
+                  <option value='Language'>Language</option>
                 )}
                 {this.state.subject === 'Law' ? (
-                  <option value='6' selected>Law</option>
+                  <option value='Law' selected>Law</option>
                 ) : (
-                  <option value='6'>Law</option>
+                  <option value='Law'>Law</option>
                 )}
                 {this.state.subject === 'Medical' ? (
-                  <option value='7' selected>Medical</option>
+                  <option value='Medical' selected>Medical</option>
                 ) : (
-                  <option value='7'>Medical</option>
+                  <option value='Medical'>Medical</option>
                 )}
                 {this.state.subject === 'Business' ? (
-                  <option value='8' selected>Business</option>
+                  <option value='Business' selected>Business</option>
                 ) : (
-                  <option value='8'>Business</option>
+                  <option value='Business'>Business</option>
                 )}
                 {this.state.subject === 'Economics' ? (
-                  <option value='9' selected>Economics</option>
+                  <option value='Economics' selected>Economics</option>
                 ) : (
-                  <option value='9'>Economics</option>
+                  <option value='Economics'>Economics</option>
                 )}
                 {this.state.subject === 'Technology' ? (
-                  <option value='10' selected>Technology</option>
+                  <option value='Technology' selected>Technology</option>
                 ) : (
-                  <option value='10'>Technology</option>
+                  <option value='Technology'>Technology</option>
                 )}
                 {this.state.subject === 'Humanities' ? (
-                  <option value='11' selected>Humanities</option>
+                  <option value='Humanities' selected>Humanities</option>
                 ) : (
-                  <option value='11'>Humanities</option>
+                  <option value='Humanities'>Humanities</option>
                 )}
               </select>
             </label>

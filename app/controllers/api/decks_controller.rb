@@ -15,7 +15,8 @@ class Api::DecksController < ApplicationController
     @deck = Deck.new
     @deck.author_id = current_user.id
     @deck.title = params[:deck][:title]
-    @deck.subject_id = params[:deck][:subjectId]
+    subjects = 'History Science Math Art Language Law Medical Business Economics Technology Humanities'.split(' ')
+    @deck.subject_id = subjects.index(params[:deck][:subject]) + 1
     if @deck.save
       render json: @deck
     else
@@ -30,7 +31,9 @@ class Api::DecksController < ApplicationController
   def update
     @deck = Deck.find(params[:id])
     @deck.title = params[:deck][:title]
-    @deck.subject_id = params[:deck][:subjectId] unless params[:deck][:subjectId].nil?
+    subjects = 'History Science Math Art Language Law Medical Business Economics Technology Humanities'.split(' ')
+    @deck.subject_id = subjects.index(params[:deck][:subject]) + 1
+    # @deck.subject_id = params[:deck][:subjectId] unless params[:deck][:subjectId].nil?
     if @deck.save
       render json: @deck
     else

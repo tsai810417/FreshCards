@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :decks, only: [:index, :show, :create, :update, :destroy] do
       resources :questions, only: [:create]
     end
-    resources :progresses, only: [:create, :show, :update]
+    resources :progresses, only: [:show, :update]
     resources :questions, only: [:update, :destroy]
     resource :session, only: [:create, :destroy, :show]
     resources :search, only: [:index]
