@@ -71,6 +71,7 @@ class DeckStudy extends React.Component {
     if (this.state.finish) {
       return (
         <div className='deck-study-container'>
+          <Link to={`/decks/${this.props.deck.id}`} className='deck-study-x'>✕</Link>
           <div className='deck-study-mastery'>
             <p>Mastery</p>
             <h3>{ `${this.props.progress.mastery}%` }</h3>
@@ -109,6 +110,7 @@ class DeckStudy extends React.Component {
           <p>Mastery</p>
           <h3>{ `${this.props.progress.mastery}%` }</h3>
         </div>
+        <Link to={`/decks/${this.props.deck.id}`} className='deck-study-x'>✕</Link>
         <h1 className='deck-study-title'>{ `Studying: ${deck.title}` }</h1>
         <h3 className='deck-study-progress'>{ `${ this.props.progress.questionIdx + 1 } of ${ qIdx.length }` }</h3>
         <div className='deck-study-content'>

@@ -7,7 +7,7 @@ const mapStateToProps = ({ decks }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDeck: id => dispatch(fetchDeck(id))
+  fetchDecks: () => dispatch(fetchDecks())
 });
 
 export default connect(

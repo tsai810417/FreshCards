@@ -6,14 +6,16 @@ $jua: 'Jua', sans-serif;
   font-size: 30px;
   margin: auto;
   margin-bottom: 100px;
+
   .deck-study-title {
-    margin-left: 250px;
+    margin-left: 320px;
   }
   .deck-study-progress {
     font-size: 25px;
     text-align: right;
     margin-right: 150px;
   }
+
   .deck-study-mastery {
     font-size: 25px;
     display: inline-flex;
@@ -21,14 +23,22 @@ $jua: 'Jua', sans-serif;
     align-items: center;
     border-radius: 50%;
     padding: 30px;
-    border: 1px solid #000000;
+    border: 3px solid #000000;
     border-radius: 100%;
     margin: 30px;
   }
+
+  .deck-study-x {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 50px;
+    color: #000000;
+  }
+
   .deck-study-content {
     margin: auto;
     height:300px;
-    margin-top: 50px;
     margin-left: 250px;
     margin-right: 250px;
     display: flex;
