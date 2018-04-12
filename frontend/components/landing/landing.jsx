@@ -7,8 +7,12 @@ class Landing extends React.Component {
     return (
       <div className='landing-container'>
         <div className='img-container'>
-          <img src='/assets/landing_img.jpg' />
+          <img src='https://github.com/tsai810417/resources/blob/master/landing_img.jpg?raw=true' />
           <p>This is a cool site</p>
+        </div>
+        <div className='landing-links'>
+        </div>
+        <div className='landing-decks'>
         </div>
       </div>
     )
