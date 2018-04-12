@@ -48,7 +48,9 @@ class DeckIndex extends React.Component {
           ) : ''}
         </div>
         <table className='deck-index-table'>
-          { deck }
+          <tbody>
+            { deck }
+          </tbody>
         </table>
       </div>
     );
