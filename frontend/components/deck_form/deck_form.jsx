@@ -118,7 +118,7 @@ class DeckForm extends React.Component {
                 )}
               </select>
             </label>
-            
+
             { this.renderErrors() }
 
             <input className='deck-form-submit'

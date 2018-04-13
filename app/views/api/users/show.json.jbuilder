@@ -1,5 +1,8 @@
 json.key_format! camelize: :lower
-json.extract! @user, :id, :username
+json.current_user do
+  json.extract! @user, :id, :username
+end
+
 #
 # json.decks do
 #   @user.decks.each do | deck |

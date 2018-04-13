@@ -35,6 +35,7 @@ class Deck < ApplicationRecord
     end
   #
   #   #3. Calculate adding scores / num q * 5.
+  return 0 if self.questions.length == 0
     return ((progress_score / (5.0 * self.questions.length)) * 100).floor
   end
 end

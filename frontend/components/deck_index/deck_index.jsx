@@ -20,6 +20,10 @@ class DeckIndex extends React.Component {
           </td>
           <td className='deck-index-td'>{ deck.subject }</td>
           { this.props.indexType === 'currentuser' ? (
+            <td className = 'deck-index-mastery'>{`${deck.mastery}%`}
+            </td>
+          ) : '' }
+          { this.props.indexType === 'currentuser' ? (
             <td className = 'deck-index-empty-td'>
               <Link to={ `/decks/${deck.id}/edit` }
                 className='deck-edit-link'>Edit Info</Link>

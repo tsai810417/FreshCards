@@ -2,7 +2,7 @@ json.key_format! camelize: :lower
 json.deck do
     json.extract! @deck, :id, :title, :subject_id, :author_id
     json.subject @deck.subject.title
-
+    json.mastery @deck.progress(current_user.id)
     json.questions @deck.question_ids
 end
 # json.questions do

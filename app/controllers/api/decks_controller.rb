@@ -7,7 +7,7 @@ class Api::DecksController < ApplicationController
     elsif params[:id].nil?
       @decks = Deck.all
     else
-      @decks = current_user.decks
+      @decks = current_user.decks + ((Progress.where(user_id: current_user.id).map{|pro| pro.deck}))
     end
   end
 # was able to create but error out if not create successfully

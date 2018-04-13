@@ -35,8 +35,6 @@ class DeckShow extends React.Component {
             </tr>
           );
         }
-          // qId will not be avaliable when the button is clicked!
-          // i want to refresh the same page after delete
       })
     }
     return (
