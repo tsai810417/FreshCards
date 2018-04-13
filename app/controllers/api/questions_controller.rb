@@ -1,4 +1,5 @@
 class Api::QuestionsController < ApplicationController
+  before_action :require_logged_in, only: [:create, :destroy]
   def create
     @question = Question.new
     @question.answer = params[:question][:answer]
