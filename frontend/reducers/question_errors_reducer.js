@@ -17,7 +17,7 @@ const questionErrorsReducer = (state = [], action) => {
       return [];
       break;
     default:
-    return state;
+      return state;
   }
 };
 

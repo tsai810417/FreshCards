@@ -13,6 +13,7 @@ class DeckShow extends React.Component {
   render() {
     let questions = '';
     if (!this.props.deck) {
+      this.props.fetchDeck(this.props.match.params.deckId);
       return (
         <div>Loading</div>
       )

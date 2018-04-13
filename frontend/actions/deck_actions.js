@@ -24,7 +24,8 @@ export const receiveErrors = errors => {
   return ({
   type: RECEIVE_DECK_ERRORS,
   errors
-})};
+  })
+};
 
 export const clearFormErrors = () => ({
   type: CLEAR_FORM_ERRORS

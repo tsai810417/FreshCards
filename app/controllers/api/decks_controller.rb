@@ -15,7 +15,8 @@ class Api::DecksController < ApplicationController
     @deck = Deck.new
     @deck.author_id = current_user.id
     @deck.title = params[:deck][:title]
-    @deck.subject_id = Subject.all.find_by(title: params[:deck][:subject]).id
+    subject = Subject.all.find_by(title: params[:deck][:subject])
+    @deck.subject_id = subject.id if subject
     if @deck.save
       render json: @deck
     else
@@ -30,9 +31,10 @@ class Api::DecksController < ApplicationController
   def update
     @deck = Deck.find(params[:id])
     @deck.title = params[:deck][:title]
-    @deck.subject_id = Subject.all.find_by(title: params[:deck][:subject]).id
+    subject = Subject.all.find_by(title: params[:deck][:subject])
+    @deck.subject_id = subject.id if subject
     # @deck.subject_id = params[:deck][:subjectId] unless params[:deck][:subjectId].nil?
-    if @deck.save
+    if @deck.update
       render json: @deck
     else
       render json: @deck.errors.full_messages, status: 422

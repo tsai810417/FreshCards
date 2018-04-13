@@ -6,6 +6,12 @@
   height: auto;
   font-size: 20px;
 
+  .deck-index-header {
+    font-size: 40px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
   .deck-index-buttons {
     display: flex;
     justify-content: space-between;
