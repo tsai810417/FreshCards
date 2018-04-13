@@ -45,12 +45,30 @@ The studying page will show each card's questions first and then after you have 
 
 ![answer](https://github.com/tsai810417/resources/blob/master/study_answer.png?raw=true)
 
-To decide whether showing the question or answer, I set a state `reveal: boolean`
+To decide whether showing the question or answer, I set a state `reveal: boolean`, once this slice of state changed the container will re-render the answer to the according to the question.
+The percent mastery is calculated and update every time a user submit a mastery level of a flashcard.
+
+#### User Profile Page
+The profile page will present the data of a user's decks and also the decks that the user had studied before.
+When the deck belongs to the current user, there will be buttons to edit, add flashcards or delete a deck.
+When the user studied another user's deck,  there will only show the precent mastery by the user on that deck.
+
+![profile](https://github.com/tsai810417/resources/blob/master/profile.png?raw=true)
+
+### Planning for the Project
+Before start working on the project, I created a blueprint while designing what features will be required and what wireframe to expect.
+The blueprint can be found in [wiki](https://github.com/tsai810417/FreshCards/wiki)
 
 
+### Technologies
+The backend is built on Ruby on Rails.
+The database is managed by Postgres.
+The frontend is built on React-Redux which gives store to handle different slice of state easier.
 
-###
-
+### Future Directions
+* Work on refactoring the code
+* Add some animations to this application to make it more interesting
+* Badges (associated with progress)
 
 
 
