@@ -5,6 +5,7 @@ class Api::ProgressesController < ApplicationController
 
   def show
     @progress = Progress.find_by(deck_id: params[:id], user_id: current_user.id)
+
     if @progress.nil?
       @progress = Progress.new()
       render json: { mastery: 0 }

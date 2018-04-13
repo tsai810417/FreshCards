@@ -29,7 +29,9 @@ class Deck < ApplicationRecord
   #   #2. Get all the scores ^
     progress_score = 0
     progresses.each do |progress|
-      progress_score += progress.score
+      if self.questions.ids.include?(progress.question_id)
+        progress_score += progress.score
+      end
     end
   #
   #   #3. Calculate adding scores / num q * 5.
