@@ -34,7 +34,7 @@ class Api::DecksController < ApplicationController
     subject = Subject.all.find_by(title: params[:deck][:subject])
     @deck.subject_id = subject.id if subject
     # @deck.subject_id = params[:deck][:subjectId] unless params[:deck][:subjectId].nil?
-    if @deck.update
+    if @deck.save
       render json: @deck
     else
       render json: @deck.errors.full_messages, status: 422
