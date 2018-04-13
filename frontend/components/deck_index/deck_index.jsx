@@ -23,19 +23,19 @@ class DeckIndex extends React.Component {
             <td className = 'deck-index-mastery'>{`${deck.mastery}%`}
             </td>
           ) : '' }
-          { this.props.indexType === 'currentuser' ? (
+          { deck.authorId === this.props.currentUser.id ? (
             <td className = 'deck-index-empty-td'>
               <Link to={ `/decks/${deck.id}/edit` }
                 className='deck-edit-link'>Edit Info</Link>
             </td>
           ) : '' }
-          { this.props.indexType === 'currentuser' ? (
+          { deck.authorId === this.props.currentUser.id ? (
             <td className = 'deck-index-empty-td'>
               <Link to={ `/decks/${deck.id}/questions/new` }
                 className='deck-add-question-link'>Add Card</Link>
             </td>
           ) : '' }
-          { this.props.indexType === 'currentuser' ? (
+          { deck.authorId === this.props.currentUser.id ? (
             <td className='deck-index-empty-td'>
               <button className='deck-delete-button' onClick={ () => this.props.deleteDeck(deck.id).then(() => this.props.history.push('/profile')) }>Delete</button>
             </td>
