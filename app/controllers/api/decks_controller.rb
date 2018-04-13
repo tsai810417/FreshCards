@@ -43,6 +43,7 @@ class Api::DecksController < ApplicationController
 
   def destroy
     deck = Deck.find(params[:id])
+    logout if current_user.id != deck.author_id 
     deck.delete
     render json: deck
   end
