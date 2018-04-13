@@ -11,11 +11,6 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-    const myProgress = this.props.decks.filter(deck => deck.author_id !== this.props.currentUser.id).map(deck => {
-      return (
-        <tr></tr>
-      )
-    })
 
     const myDeck = this.props.decks.map(deck => {
       return (
@@ -29,19 +24,19 @@ class DeckIndex extends React.Component {
             <td className = 'deck-index-mastery'>{`${deck.mastery}%`}
             </td>
           ) : '' }
-          { deck.authorId === this.props.currentUser.id ? (
+          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
             <td className = 'deck-index-empty-td'>
               <Link to={ `/decks/${deck.id}/edit` }
                 className='deck-edit-link'>Edit Info</Link>
             </td>
           ) : '' }
-          { deck.authorId === this.props.currentUser.id ? (
+          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
             <td className = 'deck-index-empty-td'>
               <Link to={ `/decks/${deck.id}/questions/new` }
                 className='deck-add-question-link'>Add Card</Link>
             </td>
           ) : '' }
-          { deck.authorId === this.props.currentUser.id ? (
+          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
             <td className='deck-index-empty-td'>
               <button className='deck-delete-button' onClick={ () => this.props.deleteDeck(deck.id).then(() => this.props.history.push('/profile')) }>Delete</button>
             </td>
