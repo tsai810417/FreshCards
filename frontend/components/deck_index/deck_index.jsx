@@ -11,7 +11,13 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-    const deck = this.props.decks.map(deck => {
+    const myProgress = this.props.decks.filter(deck => deck.author_id !== this.props.currentUser.id).map(deck => {
+      return (
+        <tr></tr>
+      )
+    })
+
+    const myDeck = this.props.decks.map(deck => {
       return (
         <tr key={deck.id} className='deck-index-row'>
           <td className='deck-title-td'>
@@ -58,7 +64,7 @@ class DeckIndex extends React.Component {
         </div>
         <table className='deck-index-table'>
           <tbody>
-            { deck }
+            { myDeck }
           </tbody>
         </table>
       </div>
