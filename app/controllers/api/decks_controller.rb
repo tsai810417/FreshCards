@@ -30,6 +30,7 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find(params[:id])
+    logout if current_user.id != @deck.author_id 
     @deck.title = params[:deck][:title]
     subject = Subject.all.find_by(title: params[:deck][:subject])
     @deck.subject_id = subject.id if subject
@@ -43,7 +44,7 @@ class Api::DecksController < ApplicationController
 
   def destroy
     deck = Deck.find(params[:id])
-    logout if current_user.id != deck.author_id 
+    logout if current_user.id != deck.author_id
     deck.delete
     render json: deck
   end

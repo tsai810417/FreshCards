@@ -14,6 +14,7 @@ class Api::QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
+    logout if current_user.id != @question.deck.author_id 
     @question.destroy
     @deck = @question.deck
     render '/api/decks/show'
