@@ -1,8 +1,8 @@
 # FreshCard     
 FreshCard is an application cloning from Brainscape and built on Ruby on Rails and React-Redux that provides the users functionalities such as creating decks of flashcards, managing their decks and studying them.       
-### Demo                         
+## Demo                         
 [Live demo](https://freshcard.herokuapp.com/#/)
-### Set Up                              
+## Set Up                              
 You will need `Rails 5.1.6` and `Postgres` installed on your machine. Before start running the application, you will clone this repo and setup the environment in terminal:
 ```command
 $ git clone https://github.com/tsai810417/FreshCards.git
@@ -20,7 +20,7 @@ $ rails server
 You will now be able to access the application at localhost:3000.
 
 To get full access to the application, you will have to either sign up as a new user or try the guest login.
-### Key Features
+## Key Features
 * Store the digested password using `BCrypt::Password` when a user signing up
 
 * Landing page have links to direct a user to the places in the application
@@ -39,7 +39,7 @@ To get full access to the application, you will have to either sign up as a new 
 
 * If you are the author of the deck, you will be able to add flashcards or remove cards in the deck show page
 
-#### Studying Decks
+### Studying Decks
 The studying page will show each card's questions first and then after you have an answer to that question or you want to see the answer, you can reveal the answer and rate the mastery level of that question and continue to next card.
 ![question](https://github.com/tsai810417/resources/blob/master/study_question.png?raw=true)
 
@@ -48,35 +48,24 @@ The studying page will show each card's questions first and then after you have 
 To decide whether showing the question or answer, I set a state `reveal: boolean`, once this slice of state changed the container will re-render the answer to the according to the question.
 The percent mastery is calculated and update every time a user submit a mastery level of a flashcard.
 
-#### User Profile Page
+### User Profile Page
 The profile page will present the data of a user's decks and also the decks that the user had studied before.
 When the deck belongs to the current user, there will be buttons to edit, add flashcards or delete a deck.
 When the user studied another user's deck,  there will only show the precent mastery by the user on that deck.
 
 ![profile](https://github.com/tsai810417/resources/blob/master/profile.png?raw=true)
 
-### Planning for the Project
+## Planning for the Project
 Before start working on the project, I created a blueprint while designing what features will be required and what wireframe to expect.
 The blueprint can be found in [wiki](https://github.com/tsai810417/FreshCards/wiki)
 
 
-### Technologies
+## Technologies
 The backend is built on Ruby on Rails.
 The database is managed by Postgres.
 The frontend is built on React-Redux which gives store to handle different slice of state easier.
 
-### Future Directions
+## Future Directions
 * Work on refactoring the code
 * Add some animations to this application to make it more interesting
 * Badges (associated with progress)
-
-
-
-
-
-
-
-
-
-
-//
