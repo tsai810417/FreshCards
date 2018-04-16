@@ -32,19 +32,19 @@ class Landing extends React.Component {
               <h3>Chemistry 101A</h3>
             </Link>
             <Link to='/decks/59' className='geo'>
-              <h3>Geometry 101A</h3>
+              <h3>Biology 101A</h3>
             </Link>
             <Link to='/decks/60' className='biochem'>
               <h3>Biochemistry 312A</h3>
             </Link>
             <Link to='/decks/61' className='bio'>
-              <h3>General Biology 102A</h3>
+              <h3>Geometry 102A</h3>
             </Link>
             <Link to='/decks/62' className='mar'>
-              <h3>Marketing 105B</h3>
+              <h3>Macroeconomics 105B</h3>
             </Link>
             <Link to='/decks/63' className='eco'>
-              <h3>Macroeconomics 112A</h3>
+              <h3>Physics 112A</h3>
             </Link>
           </div>
         </div>
