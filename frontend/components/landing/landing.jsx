@@ -28,22 +28,22 @@ class Landing extends React.Component {
           <h1>Popular Decks</h1>
           <Link to='/decks' className='link-to-all-decks'>Browse All Decks</Link>
           <div className='decks-links'>
-            <Link to='/decks/52' className='ochem'>
+            <Link to='/decks/58' className='ochem'>
               <h3>Chemistry 101A</h3>
             </Link>
-            <Link to='/decks/53' className='geo'>
+            <Link to='/decks/59' className='geo'>
               <h3>Geometry 101A</h3>
             </Link>
-            <Link to='/decks/54' className='biochem'>
+            <Link to='/decks/60' className='biochem'>
               <h3>Biochemistry 312A</h3>
             </Link>
-            <Link to='/decks/55' className='bio'>
+            <Link to='/decks/61' className='bio'>
               <h3>General Biology 102A</h3>
             </Link>
-            <Link to='/decks/56' className='mar'>
+            <Link to='/decks/62' className='mar'>
               <h3>Marketing 105B</h3>
             </Link>
-            <Link to='/decks/57' className='eco'>
+            <Link to='/decks/63' className='eco'>
               <h3>Macroeconomics 112A</h3>
             </Link>
           </div>
