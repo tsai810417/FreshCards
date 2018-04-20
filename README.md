@@ -66,6 +66,6 @@ The database is managed by Postgres.
 The frontend is built on React-Redux which gives store to handle different slice of state easier.
 
 ## Future Directions
-* Work on refactoring the code
-* Add some animations to this application to make it more interesting
-* Badges (associated with progress)
+* Work on refactoring the code.
+* Add some animations to this application to make it more interesting.
+* Badges (associated with progress).
