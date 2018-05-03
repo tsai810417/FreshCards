@@ -52,13 +52,13 @@ $jua: 'Jua', sans-serif;
 
   .deck-study-content {
     margin: auto;
-    height: 400px;
+    height: 300px;
     margin-left: 250px;
     margin-right: 250px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    .study-deck-card {
+    .study-deck-card-answer, .study-deck-card-question {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -67,10 +67,20 @@ $jua: 'Jua', sans-serif;
       border-radius: 5px;
       margin: 10px;;
       width: 80%;
-      height: 350px;
+      height: 250px;
       text-align: center;
       font-size: 25px;
+      line-height: 110%;
     }
+
+    .study-deck-card-answer {
+      background-color: red;
+    }
+
+    .study-deck-card-question {
+      background-color: green
+    }
+
     .activate-button {
       height: 50px;
       margin: auto;
