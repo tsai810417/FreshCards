@@ -42,10 +42,11 @@ $jua: 'Jua', sans-serif;
   }
 
   .deck-study-x {
-    display: block;
-    text-align: right;
+    display: inline;
+    float: right;
     text-decoration: none;
     font-size: 30px;
+    margin: 50px;
     color: #000000;
   }
 
