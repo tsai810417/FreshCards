@@ -92,13 +92,13 @@ class DeckStudy extends React.Component {
 
     if (this.props.progress.reveal) {
       show = (
-        <div className='study-deck-card'>
+        <div className='study-deck-card-answer'>
           <h3>{ questions[(qIdx[this.props.progress.questionIdx])].answer }</h3>
         </div>
       )
     } else {
       show = (
-        <div className='study-deck-card'>
+        <div className='study-deck-card-question'>
           <h3>{ questions[qIdx[this.props.progress.questionIdx]].body }</h3>
         </div>
       )
