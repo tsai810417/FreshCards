@@ -24,15 +24,16 @@ $jua: 'Jua', sans-serif;
   .deck-study-mastery {
     background-color: #bad0e0;
     font-size: 18px;
-    width: 63px;
+    width: 60px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 50%;
-    padding: 30px;
-    border: 10px solid #000000;
+    padding: 25px;
+    border: 5px solid #000000;
     border-radius: 100%;
-    margin-top: 10px;
+    margin: 10px;
+    margin-left: 50px;
+    margin-bottom: 0px;
     text-align: center;
     p {
       margin-bottom: 10px;
