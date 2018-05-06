@@ -57,7 +57,7 @@ The profile page will present the data of a user's decks and also the decks that
 When the deck belongs to the current user, there will be buttons to edit, add flashcards or delete a deck.
 When the user studied another user's deck,  there will only show the precent mastery by the user on that deck.
 
-![profile](https://github.com/tsai810417/resources/blob/master/profile.png?raw=true)
+![profile](readme_resources/freshcard_profile.png)
 
 ## Planning for the Project
 Before start working on the project, I created a blueprint while designing what features will be required and what wireframe to expect.
