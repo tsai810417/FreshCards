@@ -23,6 +23,9 @@ To get full access to the application, you will have to either sign up as a new 
 ## Key Features
 * Store the digested password using `BCrypt::Password` when a user signing up
 
+* User can only login with the correct credentials
+![login](readme_resources/freshcard_login.gif)
+
 * Landing page have links to direct a user to the places in the application
 
 * Frontend routes had separated to normal route, auth route, and protected route to redirect user when they are in inappropriate route determine by whether they are logged in or not
