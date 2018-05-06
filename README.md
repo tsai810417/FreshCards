@@ -30,6 +30,7 @@ To get full access to the application, you will have to either sign up as a new 
 * Any user can view the flashcards of a deck, but not able to interact with the study feature
 
 * Logged in users can add, edit, delete their decks
+![deck](readme_resources/freshcard_deck.gif)
 
 * The profile pages will show the decks created by user or user had studied before with the percentage mastery
 
