@@ -78,16 +78,20 @@ $jua: 'Jua', sans-serif;
       width: 80%;
       height: 250px;
       text-align: center;
-      font-size: 25px;
+      font-size: 20px;
       line-height: 110%;
     }
 
     .study-deck-card-answer {
-      background-color: red;
+      background-image: url(answer.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .study-deck-card-question {
-      background-color: green
+      background-image: url(question.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .activate-button {
