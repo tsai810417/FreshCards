@@ -13,7 +13,7 @@ $jua: 'Jua', sans-serif;
     position: absolute;
     z-index: -1;
     opacity: 0.3;
-    background-image: url('book.png');
+    background-image: url('https://raw.githubusercontent.com/tsai810417/FreshCards/master/app/assets/images/book.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -83,13 +83,13 @@ $jua: 'Jua', sans-serif;
     }
 
     .study-deck-card-answer {
-      background-image: url('answer.png');
+      background-image: url('https://raw.githubusercontent.com/tsai810417/FreshCards/master/app/assets/images/answer.png');
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     .study-deck-card-question {
-      background-image: url('question.png');
+      background-image: url('https://raw.githubusercontent.com/tsai810417/FreshCards/master/app/assets/images/question.png');
       background-repeat: no-repeat;
       background-size: cover;
     }
