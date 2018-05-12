@@ -2,12 +2,21 @@
 $jua: 'Jua', sans-serif;
 
 .deck-study-container {
-  background-image: url(book.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+
   font-size: 30px;
   margin: auto;
   margin-bottom: 50px;
+
+  .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+    background-image: url(book.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   .deck-study-title {
     display: block;

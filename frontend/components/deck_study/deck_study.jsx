@@ -106,6 +106,8 @@ class DeckStudy extends React.Component {
 
     return (
       <div className='deck-study-container'>
+        <div className='background'>
+        </div>
         <div className='deck-study-mastery'>
           <p>Mastery of Deck</p>
           <h3>{ `${this.props.progress.mastery}%` }</h3>
