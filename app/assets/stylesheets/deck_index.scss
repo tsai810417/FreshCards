@@ -84,4 +84,18 @@
     color: purple;
     width: 30px;
   }
+  .deck-index-table {
+    tr {
+      td {
+        margin-left: 10px;
+      }
+      .deck-title-td {
+        flex-basis: 320px;
+      }
+      .deck-subject-td {
+        flex-basis: 320px;
+      }
+    }
+  }
+}
 }
