@@ -57,6 +57,7 @@ class CurrentUserDeckIndex extends React.Component {
         </table>
         <div className='deck-index-buttons'>
           <Link to='/decks' className='deck-to-index-link'>To All Decks</Link>
+          <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>
         </div>
       </div>
     );
