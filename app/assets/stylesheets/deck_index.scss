@@ -98,4 +98,43 @@
     }
   }
 }
+
+.currentuser-deck-index-container {
+  .deck-index-table {
+    .currentuser-deck-index-row {
+      justify-content: flex-start;
+      td {
+        margin-left: 8px;
+      }
+      .currentuser-deck-mastery-td {
+        flex-basis: 50px;
+        text-align: center;
+      }
+      .currentuser-deck-title-td {
+        flex-basis: 170px;
+      }
+      .currentuser-deck-subject-td {
+        flex-basis: 170px;
+      }
+      .currentuser-deck-button-td {
+        flex-basis: 50px;
+
+        a, button {
+          font-size: 15px;
+          display: inline-block;
+          width: 70px;
+          padding: 5px;
+          border: 1px solid #000000;
+          border-radius: 30px;
+          text-decoration: none;
+          text-align: center;
+          color: #000000;
+
+          &:hover {
+            background-color: #53BBE3;
+            cursor: pointer;
+          }
+        }
+      }
+    }
 }
