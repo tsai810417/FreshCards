@@ -14,31 +14,11 @@ class DeckIndex extends React.Component {
             <Link to={ `/decks/${deck.id}` } className='deck-index-link'>
             {deck.title}</Link>
           </td>
-          <td className='deck-index-td'>{ deck.subject }</td>
-          { this.props.indexType === 'currentuser' ? (
-            <td className = 'deck-index-mastery'>{`${deck.mastery}%`}
-            </td>
-          ) : '' }
-          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
-            <td className = 'deck-index-empty-td'>
-              <Link to={ `/decks/${deck.id}/edit` }
-                className='deck-edit-link'>Edit Info</Link>
-            </td>
-          ) : '' }
-          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
-            <td className = 'deck-index-empty-td'>
-              <Link to={ `/decks/${deck.id}/questions/new` }
-                className='deck-add-question-link'>Add Card</Link>
-            </td>
-          ) : '' }
-          { this.props.indexType === 'currentuser' && deck.authorId === this.props.currentUser.id ? (
-            <td className='deck-index-empty-td'>
-              <button className='deck-delete-button' onClick={ () => this.props.deleteDeck(deck.id).then(() => this.props.history.push('/profile')) }>Delete</button>
-            </td>
-          ) : '' }
+          <td className='deck-subject-td'>{ deck.subject }</td>
         </tr>
-      );
+      )
     });
+
     return (
       <div className='deck-index-container'>
         { this.props.indexType === 'currentuser' ? (
