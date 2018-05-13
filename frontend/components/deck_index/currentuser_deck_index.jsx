@@ -81,6 +81,15 @@ class CurrentUserDeckIndex extends React.Component {
 
     return (
       <div className='currentuser-deck-index-container'>
+        <div id="delete-modal">
+          <div id="delete-modal-content">
+            <p id="modal-message">Sure you want to delete entire deck?</p>
+            <div id="modal-buttons">
+              <button id="modal-cancel" onClick={this.handleModalCancel}>Cancel</button>
+              <button id="modal-confirm" data-id="" onClick={this.handleModalConfirm}>Yes, delete</button>
+            </div>
+          </div>
+        </div>
         <h1 className='deck-index-header'>Profile</h1>
         <table className='deck-index-table'>
           <tbody>
