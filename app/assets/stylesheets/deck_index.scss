@@ -92,6 +92,13 @@
 
 .currentuser-deck-index-container {
   .deck-index-table {
+    tr {
+      z-index: -1;
+      &:hover {
+        background-color: #53BBE3;
+        cursor: pointer;
+      }
+    }
     .currentuser-deck-index-row {
       justify-content: flex-start;
       td {
