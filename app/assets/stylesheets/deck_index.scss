@@ -11,6 +11,7 @@
   }
 
   .deck-index-buttons {
+    margin: auto;
     display: flex;
     justify-content: center;
     .link-to-create-deck, .deck-to-index-link {
@@ -33,7 +34,8 @@
     border-right: 3px solid black;
     border-bottom: 3px solid black;
     border-top: 2px solid black;
-    width: 100%;
+    margin: auto;
+    width: 70%;
     height: auto;
     background-color: #BFE1EE;
     tr {
