@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 
 class DeckIndex extends React.Component {
   componentDidMount() {
-    if (this.props.indexType === 'all') {
-      this.props.fetchDecks();
-    } else {
-      this.props.fetchDecks(1)
-    }
+    this.props.fetchDecks();
   }
 
   render() {
