@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import DeckIndex from './deck_index';
+import CurrentUserDeckIndex from './currentuser_deck_index';
 import { fetchCurrentUserDecks, deleteDeck } from '../../actions/deck_actions';
 import { receiveCurrentUserProgresses } from '../../actions/session_actions';
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DeckIndex);
+)(CurrentUserDeckIndex);
