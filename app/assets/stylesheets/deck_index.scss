@@ -8,13 +8,13 @@
 
   .deck-index-header {
     font-size: 40px;
-    margin-top: 15px;
+    margin: 15px;
     text-align: center;
   }
 
   .deck-index-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     .link-to-create-deck, .deck-to-index-link {
       color: #000000;
       margin: 30px;
@@ -40,12 +40,8 @@
     background-color: #BFE1EE;
     tr {
       display: flex;
-      justify-content: space-between;
       padding: 15px;
       border-top: 1px solid black;
-      th {
-        font-size: 25px;
-      }
       .deck-index-td {
         width: 85px;
         text-align: center;
