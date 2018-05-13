@@ -12,7 +12,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import DeckIndexContainer from './deck_index/deck_index_container';
-import CurrentUserDeckIndexContainer from './deck_index/currentuser_deck_index_container';
+import CurrentuserDeckIndexContainer from './deck_index/currentuser_deck_index_container';
 import CreateDeckFormContainer from './deck_form/create_deck_form_container';
 import EditDeckFormContainer from './deck_form/edit_deck_form_container';
 import DeckShowContainer from './deck_show/deck_show_container';
@@ -34,7 +34,7 @@ const App = () => (
       <AuthRoute path="/login" component={ LoginFormContainer } />
       <AuthRoute path="/signup" component={ SignupFormContainer } />
       <Route exact path="/decks" component={ DeckIndexContainer } />
-      <ProtectedRoute path="/profile" component={ CurrentUserDeckIndexContainer } />
+      <ProtectedRoute path="/profile" component={ CurrentuserDeckIndexContainer } />
       <ProtectedRoute path="/decks/new" component={ CreateDeckFormContainer } />
       <ProtectedRoute path="/decks/:deckId/edit" component={ EditDeckFormContainer } />
       <Route exact path="/decks/:deckId" component={ DeckShowContainer } />
