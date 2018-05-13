@@ -137,4 +137,22 @@
         }
       }
     }
+    .deck-index-row {
+      display: flex;
+      justify-content: flex-start;
+      td {
+        margin: 3px;
+      }
+      .currentuser-deck-mastery-td {
+        flex-basis: 50px;
+        text-align: center;
+      }
+      .deck-title-td {
+        flex-basis: 170px;
+      }
+      .deck-subject-td {
+        flex-basis: 170px;
+      }
+    }
+  }
 }
