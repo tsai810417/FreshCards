@@ -21,22 +21,15 @@ class DeckIndex extends React.Component {
 
     return (
       <div className='deck-index-container'>
-        { this.props.indexType === 'currentuser' ? (
-          <h1 className='deck-index-header'>Profile</h1>
-        ) : (
-          <h1 className='deck-index-header'>Index</h1>
-        )}
-        <div className='deck-index-buttons'>
-          <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>
-          { this.props.indexType === 'currentuser' ? (
-            <Link to='/decks' className='deck-to-index-link'>To All Decks</Link>
-          ) : ''}
-        </div>
+          <h1 className='deck-index-header'>All Decks</h1>
         <table className='deck-index-table'>
           <tbody>
-            { myDeck }
+            { decks }
           </tbody>
         </table>
+        <div className='deck-index-buttons'>
+          <Link to='/decks/new' className='link-to-create-deck'>New Deck</Link>
+        </div>
       </div>
     );
   }
