@@ -9,10 +9,9 @@ class DeckIndex extends React.Component {
   render() {
     const decks = this.props.decks.map(deck => {
       return (
-        <tr key={deck.id} className='deck-index-row'>
+        <tr key={deck.id} className='deck-index-row' onClick={ () => this.props.history.push(`/decks/${deck.id}`) }>
           <td className='deck-title-td'>
-            <Link to={ `/decks/${deck.id}` } className='deck-index-link'>
-            {deck.title}</Link>
+            {deck.title}
           </td>
           <td className='deck-subject-td'>{ deck.subject }</td>
         </tr>
