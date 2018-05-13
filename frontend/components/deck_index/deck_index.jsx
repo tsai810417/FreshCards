@@ -7,8 +7,7 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-
-    const myDeck = this.props.decks.map(deck => {
+    const decks = this.props.decks.map(deck => {
       return (
         <tr key={deck.id} className='deck-index-row'>
           <td className='deck-title-td'>
