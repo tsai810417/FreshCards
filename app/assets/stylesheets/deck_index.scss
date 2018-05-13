@@ -116,11 +116,12 @@
       }
       .currentuser-deck-button-td {
         flex-basis: 50px;
+        z-index: 2;
 
-        a, button {
+        button {
           font-size: 15px;
           display: inline-block;
-          width: 70px;
+          width: 72px;
           padding: 5px;
           border: 1px solid #000000;
           border-radius: 30px;
@@ -129,7 +130,7 @@
           color: #000000;
 
           &:hover {
-            background-color: #53BBE3;
+            background-color: #FFFFFF;
             cursor: pointer;
           }
         }
