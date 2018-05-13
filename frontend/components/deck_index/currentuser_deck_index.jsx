@@ -7,6 +7,16 @@ class CurrentUserDeckIndex extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleModalConfirm = this.handleModalConfirm.bind(this);
+    this.handleModalCancel = this.handleModalCancel.bind(this);
+    window.onclick = e => {
+      if (e.target == document.getElementById('delete-modal')) {
+        document.getElementById('modal-confirm').attributes[1].value = "";
+        document.getElementById('delete-modal').style.display = 'none';
+      }
+    }
+  }
+
   handleEdit(e) {
     e.preventDefault();
     this.props.history.push(`/decks/${e.target.dataset.id}/edit`);
