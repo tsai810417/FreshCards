@@ -155,3 +155,39 @@
     }
   }
 }
+
+#delete-modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  padding-top: 200px;
+  background-color: rgba(0,0,0,0.5);
+  #delete-modal-content {
+    color: #000000;
+    background-color: rgba(230, 230, 230, 0.9);
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #000000;
+    #modal-message {
+      text-align: center;
+    }
+    #modal-buttons {
+      margin: auto;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-around;
+      button {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        padding: 5px;
+        &:hover {
+          background-color: #B6B6B6;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
