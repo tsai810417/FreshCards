@@ -45,6 +45,22 @@ class CurrentUserDeckIndex extends React.Component {
         </tr>
       )
     });
+
+    return (
+      <div className='currentuser-deck-index-container'>
+        <h1 className='deck-index-header'>Profile</h1>
+        <table className='deck-index-table'>
+          <tbody>
+            { myDecks }
+            { otherDecks }
+          </tbody>
+        </table>
+        <div className='deck-index-buttons'>
+          <Link to='/decks' className='deck-to-index-link'>To All Decks</Link>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default CurrentUserDeckIndex;
